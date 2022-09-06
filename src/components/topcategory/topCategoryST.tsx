@@ -1,9 +1,8 @@
 import styled from "styled-components";
 
-export const topcategory = styled.div`
+export const topcategory = styled.section`
   width: 100%;
   margin-top: 4rem;
-  margin-bottom: 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -29,7 +28,7 @@ export const itens = styled.div`
   //background-color: yellow;
 
   span {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: 500;
   }
 `;
@@ -49,5 +48,6 @@ export const cards = styled.div`
     justify-content: center;
     align-items: center;
     border: 2px solid rgba(0, 0, 0, 0.2);
+    cursor: pointer;
   }
 `;

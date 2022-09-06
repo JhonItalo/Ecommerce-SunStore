@@ -27,6 +27,8 @@ export const li = styled.li`
   }
 `;
 export const navlink = styled.a`
+  cursor: pointer;
+
   display: flex;
   gap: 0.1rem;
 

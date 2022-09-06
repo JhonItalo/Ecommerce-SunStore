@@ -5,7 +5,7 @@ const bannerSecond = () => {
   return (
     <S.bannerSecond>
       <S.item>
-        <img src="/assets/cadeira.png" alt="Cadeira" width="45%" />
+        <img src="/assets/bannerSecond-cadeira.png" alt="Cadeira" width="45%" />
         <div className="left">
           <p className="titleFirst">Seating</p>
           <p>New Collection</p>
@@ -22,7 +22,7 @@ const bannerSecond = () => {
             <S.bannerLink>Shop Now</S.bannerLink>
           </Link>
         </div>
-        <img src="/assets/sofa.png" alt="sofa" width="47%" />
+        <img src="/assets/bannerSecond-sofa.png" alt="sofa" width="47%" />
       </S.item>
     </S.bannerSecond>
   );

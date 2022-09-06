@@ -6,7 +6,10 @@ import { HiOutlineSearch } from "react-icons/hi";
 const CarrinhoBusca = () => {
   return (
     <S.icons>
-      <HiOutlineSearch />
+      <S.busca>
+        <input type="text" maxLength={20} />
+        <HiOutlineSearch />
+      </S.busca>
       <AiOutlineHeart />
       <AiOutlineShoppingCart />
     </S.icons>

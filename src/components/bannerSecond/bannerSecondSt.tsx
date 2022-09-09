@@ -20,7 +20,6 @@ export const item = styled.div`
     align-items: end;
   }
   div {
-    //background-color: red;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -37,6 +36,7 @@ export const item = styled.div`
   }
 `;
 export const bannerLink = styled.a`
+  cursor: pointer;
   width: 7rem;
   height: 2rem;
   display: flex;

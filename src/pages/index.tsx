@@ -19,6 +19,7 @@ interface props {
 
 export default function Home({ newP, feature, best }: props) {
   console.log("renderizou index");
+  console.log(best[0].id);
   return (
     <>
       <Head>

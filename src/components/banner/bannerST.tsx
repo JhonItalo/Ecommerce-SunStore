@@ -37,6 +37,7 @@ export const texto = styled.div`
   }
 `;
 export const bannerLink = styled.a`
+  cursor: pointer;
   width: 10rem;
   height: 2.5rem;
   font-style: italic;

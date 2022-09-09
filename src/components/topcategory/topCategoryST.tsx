@@ -8,14 +8,14 @@ export const topcategory = styled.section`
   justify-content: center;
   align-items: center;
   gap: 3rem;
-  //border: 1px solid yellow;
+  border: 1px solid yellow;
 `;
 export const Flex = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 0 1.5rem;
-  //border: 1px solid red;
+  border: 1px solid red;
 `;
 export const itens = styled.div`
   width: 10.5vw;
@@ -24,16 +24,14 @@ export const itens = styled.div`
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  //border: 1px solid yellow;
-  //background-color: yellow;
-
+  border: 1px solid pink;
   span {
     font-size: 1.1rem;
     font-weight: 500;
   }
 `;
 
-export const cards = styled.div`
+export const cards = styled.a`
   width: 100%;
   height: 24vh;
   display: flex;

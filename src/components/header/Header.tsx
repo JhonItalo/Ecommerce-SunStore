@@ -4,6 +4,7 @@ import InfoUser from "../infoUser/InfoUser";
 import CarrinhoBusca from "../carrinhoBusca/CarrinhoBusca";
 
 const Header = () => {
+  console.log("header render");
   return (
     <S.header>
       <S.content>

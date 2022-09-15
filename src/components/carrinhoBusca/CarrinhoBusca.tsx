@@ -1,15 +1,15 @@
 import * as S from "./carrinhoBuscaST";
-import { useEffect, useRef, useState } from "react";
+import { useContext } from "react";
+import { CartContext } from "../../context/CarrinhoContext";
+import { useState, useEffect } from "react";
 
 import { AiOutlineShoppingCart, AiOutlineHeart } from "react-icons/ai";
 import { HiOutlineSearch } from "react-icons/hi";
 
 const CarrinhoBusca = () => {
-  useEffect(() => {
-    localStorage.setItem("carrinho", "teste");
-  });
-
+  console.log("carrinho busca");
   const [inputOn, setinputOn] = useState<string>("off");
+  const { AttCart } = useContext(CartContext);
 
   return (
     <S.icons>
@@ -28,6 +28,7 @@ const CarrinhoBusca = () => {
 
       <S.carrinho>
         <AiOutlineShoppingCart />
+        <span>{AttCart}</span>
       </S.carrinho>
     </S.icons>
   );

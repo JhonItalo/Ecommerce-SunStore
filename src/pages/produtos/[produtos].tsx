@@ -1,4 +1,6 @@
 import { GetStaticProps, GetStaticPaths } from "next";
+import ErrorISR from "../../components/errorISR/ErrorISR";
+import ProdutoISR from "../../components/produtoISR/ProdutoISR";
 interface props {
   produto: any;
   error: boolean;
@@ -8,8 +10,8 @@ const produtos = ({ produto, error }: props) => {
 
   return (
     <>
-      {error && <p>No Results Found</p>}
-      {error === false && <div>{"teste"}</div>};
+      {error && <ErrorISR />}
+      {error === false && <ProdutoISR produto={produto} />};
     </>
   );
 };

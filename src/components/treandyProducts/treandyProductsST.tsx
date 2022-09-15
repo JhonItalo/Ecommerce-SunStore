@@ -12,7 +12,9 @@ export const treandyProducts = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid yellow;
+  padding: 0 2rem;
+  border: 1px solid black;
+  // background-color: ${({ theme }) => theme.colors.greyCard};
 `;
 export const opcoes = styled.div`
   margin-top: 2rem;
@@ -39,13 +41,4 @@ export const listProducts = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   overflow: hidden;
-`;
-export const itens = styled.div`
-  width: 22%;
-  margin-bottom: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
 `;

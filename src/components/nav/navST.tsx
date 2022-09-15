@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+interface propsLi {
+  active?: string;
+}
+
 export const nav = styled.nav`
   width: 100%;
   height: 6.5vh;
@@ -16,11 +20,13 @@ export const nav = styled.nav`
     gap: 1.5rem;
   }
 `;
-export const li = styled.li`
+export const li = styled.li<propsLi>`
   height: inherit;
   padding-left: 0.2rem;
   display: flex;
   align-items: center;
+  border-bottom: ${({ active }) => (active ? "2px solid #BAAA55" : "")};
+   
 
   &:hover {
     color: ${({ theme }) => theme.colors.bege};

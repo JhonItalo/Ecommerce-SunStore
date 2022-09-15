@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { memo } from "react";
+
 import TitleSection from "../titleSection/TitleSection";
 import Products from "../products/Products";
 import * as S from "./treandyProductsST";
@@ -15,6 +15,7 @@ interface props {
   best: objectmodel[];
 }
 const TreandyProducts = ({ newP, feature, best }: props) => {
+  console.log("trendly render");
   const [opcListaProdutos, setopcListaProdutos] = useState<string>("new");
   console.log("renderizou");
   return (
@@ -46,38 +47,32 @@ const TreandyProducts = ({ newP, feature, best }: props) => {
         <S.listProducts>
           {opcListaProdutos === "new" &&
             newP.map((items) => (
-              <S.itens key={items.id}>
-                <Products
-                  title={items.title}
-                  path={items.poster_path}
-                  id={items.id}
-                  width="100%"
-                />
-              </S.itens>
+              <Products
+                key={items.id}
+                title={items.title}
+                path={items.poster_path}
+                id={items.id}
+              />
             ))}
 
           {opcListaProdutos === "feature" &&
             feature.map((items) => (
-              <S.itens key={items.id}>
-                <Products
-                  title={items.title}
-                  path={items.poster_path}
-                  id={items.id}
-                  width="100%"
-                />
-              </S.itens>
+              <Products
+                key={items.id}
+                title={items.title}
+                path={items.poster_path}
+                id={items.id}
+              />
             ))}
 
           {opcListaProdutos === "best" &&
             best.map((items) => (
-              <S.itens key={items.id}>
-                <Products
-                  title={items.title}
-                  path={items.poster_path}
-                  id={items.id}
-                  width="100%"
-                />
-              </S.itens>
+              <Products
+                key={items.id}
+                title={items.title}
+                path={items.poster_path}
+                id={items.id}
+              />
             ))}
         </S.listProducts>
       </S.treandyProducts>

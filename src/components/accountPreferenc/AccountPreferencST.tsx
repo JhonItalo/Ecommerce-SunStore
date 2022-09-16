@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const user = styled.div`
+export const AccPref = styled.div`
   display: flex;
   gap: 0.4rem;
 `;

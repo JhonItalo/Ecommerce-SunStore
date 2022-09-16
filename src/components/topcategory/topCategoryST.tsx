@@ -24,7 +24,7 @@ export const itens = styled.div`
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  //border: 1px solid pink;
+  border: 1px solid pink;
   span {
     font-size: 1.1rem;
     font-weight: 500;
@@ -38,6 +38,9 @@ export const cards = styled.a`
   justify-content: center;
   align-items: center;
   border: 2px solid rgba(0, 0, 0, 0.2);
+  @media (max-width: 1920px) {
+    height: 21vh;
+  }
 
   div {
     width: 94%;

@@ -5,7 +5,12 @@ const bannerSecond = () => {
   return (
     <S.bannerSecond>
       <S.item>
-        <img src="/assets/bannerSecond-cadeira.png" alt="Cadeira" width="45%" />
+        <img
+          src="/assets/bannerSecond-cadeira.png"
+          alt="Cadeira"
+          width="45%"
+          height="auto"
+        />
         <div className="left">
           <p className="titleFirst">Seating</p>
           <p>New Collection</p>
@@ -14,6 +19,7 @@ const bannerSecond = () => {
           </Link>
         </div>
       </S.item>
+
       <S.item>
         <div>
           <p className="titleFirst">Modern</p>

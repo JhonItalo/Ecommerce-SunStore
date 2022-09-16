@@ -4,17 +4,6 @@ interface props {
   active: boolean;
 }
 
-export const icons = styled.div`
-  display: flex;
-  justify-content: baseline;
-  gap: 0.5rem;
-  font-size: 1.5rem;
-  color: rgba(0, 0, 0, 0.8);
-  svg {
-    cursor: pointer;
-    font-size: 1.8rem;
-  }
-`;
 export const busca = styled.div<props>`
   display: flex;
   justify-content: end;
@@ -42,22 +31,5 @@ export const busca = styled.div<props>`
     border: none;
     outline: none;
     overflow: none;
-  }
-`;
-export const favoritos = styled.div``;
-
-export const carrinho = styled.div`
-  position: relative;
-
-  span {
-    position: absolute;
-    top: 0;
-    right: 0;
-    font-size: 0.7rem;
-    font-weight: bold;
-    padding: 0.1rem;
-    color: white;
-    border-radius: 50%;
-    background-color: ${({ theme }) => theme.colors.bege};
   }
 `;

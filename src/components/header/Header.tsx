@@ -1,20 +1,20 @@
 import * as S from "./headerST";
 import Link from "next/link";
-import InfoUser from "../infoUser/InfoUser";
-import CarrinhoBusca from "../carrinhoBusca/CarrinhoBusca";
+import CarrinhoBuscaFav from "../carrinhoBuscaFav/CarrinhoBuscaFav";
+import AccountPreferenc from "../accountPreferenc/AccountPreferenc";
 
 const Header = () => {
   console.log("header render");
   return (
     <S.header>
       <S.content>
-        <InfoUser />
+        <AccountPreferenc />
         <Link href="/">
           <a className="logo">
             <h1>SunStore .</h1>
           </a>
         </Link>
-        <CarrinhoBusca />
+        <CarrinhoBuscaFav />
       </S.content>
     </S.header>
   );

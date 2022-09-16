@@ -1,9 +1,12 @@
+import { useContext, useEffect, memo, useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+
 import * as S from "./productsST";
-import { useContext, useEffect, memo, useState, useRef } from "react";
+
 import { CartContext } from "../../context/CarrinhoContext";
 import { AiOutlineHeart } from "react-icons/ai";
 import { FavoritoContext } from "../../context/FavContext";
-import Link from "next/link";
 
 interface props {
   title: string;

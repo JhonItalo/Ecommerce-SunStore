@@ -1,9 +1,9 @@
-import * as S from "./infoUserST";
+import * as S from "./AccountPreferencST";
 
 import { MdKeyboardArrowDown } from "react-icons/md";
-const InfoUser = () => {
+const AccountPreferenc = () => {
   return (
-    <S.user>
+    <S.AccPref>
       <S.icons>
         <span>USD</span>
         <MdKeyboardArrowDown />
@@ -16,8 +16,8 @@ const InfoUser = () => {
         <span>My Account</span>
         <MdKeyboardArrowDown />
       </S.icons>
-    </S.user>
+    </S.AccPref>
   );
 };
 
-export default InfoUser;
+export default AccountPreferenc;

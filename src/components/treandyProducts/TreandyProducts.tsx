@@ -17,7 +17,6 @@ interface props {
 const TreandyProducts = ({ newP, feature, best }: props) => {
   console.log("trendly render");
   const [opcListaProdutos, setopcListaProdutos] = useState<string>("new");
-  console.log("renderizou");
   return (
     <>
       <S.treandyProducts>

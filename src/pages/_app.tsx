@@ -3,23 +3,25 @@ import { ThemeProvider } from "styled-components";
 
 import GlobalStyles from "../../styles/global";
 import themes from "../../styles/themes";
-import Header from "../components/header/Header";
-import Nav from "../components/nav/Nav";
+import Footer from "../components/layout/footer";
+import Header from "../components/layout/header";
+import Nav from "../components/layout/nav";
 import CarrinhoContext from "../context/CarrinhoContext";
 import FavContext from "../context/FavContext";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <FavContext>
-        <CarrinhoContext>
-          <ThemeProvider theme={themes}>
+      <ThemeProvider theme={themes}>
+        <FavContext>
+          <CarrinhoContext>
             <Header />
             <Nav />
             <Component {...pageProps} />
-          </ThemeProvider>
-        </CarrinhoContext>
-      </FavContext>
+          </CarrinhoContext>
+        </FavContext>
+        <Footer />
+      </ThemeProvider>
       <GlobalStyles />
     </>
   );

@@ -1,10 +1,10 @@
 import Head from "next/head";
-import Banner from "../components/banner/Banner";
-import BannerSecond from "../components/bannerSecond/BannerSecond";
+import Banner from "../components/banner";
+import BannerSecond from "../components/bannerSecond/indes";
 import { GetStaticProps } from "next";
-import Sections from "../components/sections/Sections";
-import TopCategory from "../components/topCategory/TopCategory";
-import TreandyProducts from "../components/treandyProducts/TreandyProducts";
+import Sections from "../components/sections";
+import TopCategory from "../components/topCategory";
+import TreandyProducts from "../components/treandyProducts";
 
 interface objectmodel {
   title: string;

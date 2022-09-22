@@ -1,6 +1,6 @@
 import { GetStaticProps, GetStaticPaths } from "next";
-import ErrorISR from "../../components/errorISR/ErrorISR";
-import ProdutoISR from "../../components/produtoISR/ProdutoISR";
+import ErrorISR from "../../components/errorISR";
+import ProdutoISR from "../../components/produtoISR";
 interface props {
   produto: any;
   error: boolean;
@@ -20,7 +20,7 @@ export default produtos;
 
 export const buscaId = async (id: string) => {
   const req = await fetch(
-    `https://api.themoviedb.org/3/movie/${id}?api_key=617375c16cb7cbacc59f9c2b6102e4e4`
+    `https://api.themoviedb.org/3/movie/${id}?api_key=617375c16cb7cbacc59f9c2b6102e4e4&language=pt-BR`
   );
   const response = await req.json();
   return response;
@@ -45,4 +45,3 @@ export const getStaticPaths: GetStaticPaths = async () => {
     fallback: true,
   };
 };
-/*610150*/

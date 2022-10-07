@@ -6,26 +6,22 @@ interface props {
 }
 
 const UseAddFav = ({ title, id }: props) => {
-  const [AdiconarFavorito, setAdcionarFavorito] = useState<boolean>(false);
+  const [AdiconarFavorito, setAdcionarFavorito] = useState<number>(0);
 
   useEffect(() => {
-    if (AdiconarFavorito === true) {
+    if (AdiconarFavorito > 0) {
       if (typeof localStorage.getItem("favorito") != typeof "string") {
-        localStorage.setItem(
-          "favorito",
-          JSON.stringify([{ title: title, id: id }])
-        );
+        localStorage.setItem("favorito", JSON.stringify([{ title: title, id: id }]));
       } else {
         const responseString = localStorage.getItem("favorito");
-        console.log(responseString);
-        const responseArray = JSON.parse(responseString);
+        const responseArray = JSON.parse(responseString!);
         responseArray.push({ title: title, id: id });
         localStorage.setItem("favorito", JSON.stringify(responseArray));
       }
     }
-  }, [AdiconarFavorito]);
+  }, [AdiconarFavorito, title, id]);
 
-  return { setAdcionarFavorito };
+  return { AdiconarFavorito, setAdcionarFavorito };
 };
 
 export default UseAddFav;

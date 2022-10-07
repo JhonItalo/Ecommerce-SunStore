@@ -1,22 +1,18 @@
 import * as S from "./styles";
-import Link from "next/link";
 import CarrinhoBuscaFav from "../../carrinhoBuscaFav";
 import AccountPreferenc from "../../accountPreferenc";
+import Logo from "../../logo";
 
 const Header = () => {
   console.log("header render");
   return (
-    <S.header>
-      <S.content>
+    <S.Header>
+      <S.Content>
         <AccountPreferenc />
-        <Link href="/">
-          <a className="logo">
-            <h1>SunStore .</h1>
-          </a>
-        </Link>
+        <Logo />
         <CarrinhoBuscaFav />
-      </S.content>
-    </S.header>
+      </S.Content>
+    </S.Header>
   );
 };
 

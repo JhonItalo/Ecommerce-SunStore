@@ -1,8 +1,7 @@
 import React, { ReactNode, useContext } from "react";
-//import * as S from "./styles";
 import { FavoritoContext } from "../../context/FavContext";
 import UseAddFav from "../../hooks/UseAddFav";
-//import { AiOutlineHeart } from "react-icons/ai";
+
 
 interface props {
   title: string;
@@ -12,10 +11,10 @@ interface props {
 
 const ButtonAddFavoritos = ({ title, id, children }: props) => {
   const { Attfav, setAttfav } = useContext(FavoritoContext);
-  const { setAdcionarFavorito } = UseAddFav({ title, id });
+  const { AdiconarFavorito, setAdcionarFavorito } = UseAddFav({ title, id });
 
   const handleClickAddFavoritos = () => {
-    setAdcionarFavorito(true);
+    setAdcionarFavorito(AdiconarFavorito + 1);
     setAttfav(Attfav + 1);
   };
 

@@ -10,18 +10,23 @@ interface props {
   title: string;
   path: string;
   id: number;
+  width: string;
+  height: string;
+  type: "s" | "l";
 }
 
-const Products = ({ title, path, id }: props) => {
+const Products = ({ title, path, id, width, height, type }: props) => {
+  console.log("render produto");
   return (
-    <S.itens>
-      <S.produtoImage>
+    <S.Itens width={width} height={height} type={type}>
+      <div className="ConteinerImage">
         <Link href={`produtos/${id}`}>
           <a>
             <Image
               src={`https://image.tmdb.org/t/p/w300${path}`}
               layout="fill"
               objectFit="cover"
+              objectPosition="center"
               alt={title}
             />
           </a>
@@ -30,13 +35,13 @@ const Products = ({ title, path, id }: props) => {
         <ButtonAddFavoritos title={title} id={id}>
           <AiOutlineHeart />
         </ButtonAddFavoritos>
-      </S.produtoImage>
+      </div>
 
-      <S.NomeCarrinho>
+      <S.TitleButtonCart>
         <p>{title}</p>
         <ButtonAddCart title={title} id={id} />
-      </S.NomeCarrinho>
-    </S.itens>
+      </S.TitleButtonCart>
+    </S.Itens>
   );
 };
 

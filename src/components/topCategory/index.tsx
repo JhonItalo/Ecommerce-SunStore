@@ -5,33 +5,33 @@ import * as S from "./styles";
 const TopCategory = () => {
   console.log("top category");
   return (
-    <S.topcategory>
+    <S.Topcategory>
       <TitleSection title="Best Itens" subtitle="Top category" />
-      
+
       <S.Flex>
-        <S.itens>
+        <S.Itens>
           <Link href="/shop">
-            <S.cards>
+            <S.Cards>
               <div>
                 <img src="/assets/topCategory-chair.png" alt="" width="100%" />
               </div>
-            </S.cards>
+            </S.Cards>
           </Link>
           <span>Chair</span>
-        </S.itens>
-        <S.itens>
+        </S.Itens>
+        <S.Itens>
           <Link href="/shop">
-            <S.cards>
+            <S.Cards>
               <div>
                 <img src="/assets/topCategory-cama.png" alt="" width="100%" />
               </div>
-            </S.cards>
+            </S.Cards>
           </Link>
           <span>Bed</span>
-        </S.itens>
-        <S.itens>
+        </S.Itens>
+        <S.Itens>
           <Link href="/shop">
-            <S.cards>
+            <S.Cards>
               <div>
                 <img
                   src="/assets/topCategory-computer.png"
@@ -39,13 +39,13 @@ const TopCategory = () => {
                   width="100%"
                 />
               </div>
-            </S.cards>
+            </S.Cards>
           </Link>
           <span>Work Desk</span>
-        </S.itens>
-        <S.itens>
+        </S.Itens>
+        <S.Itens>
           <Link href="/shop">
-            <S.cards>
+            <S.Cards>
               <div>
                 <img
                   src="/assets/topCategory-cadeira.png"
@@ -53,13 +53,13 @@ const TopCategory = () => {
                   width="100%"
                 />
               </div>
-            </S.cards>
+            </S.Cards>
           </Link>
           <span>Table</span>
-        </S.itens>
-        <S.itens>
+        </S.Itens>
+        <S.Itens>
           <Link href="/shop">
-            <S.cards>
+            <S.Cards>
               <div>
                 <img
                   src="/assets/topCategory-sofaset.png"
@@ -67,12 +67,12 @@ const TopCategory = () => {
                   width="100%"
                 />
               </div>
-            </S.cards>
+            </S.Cards>
           </Link>
           <span>Sofa-Set</span>
-        </S.itens>
+        </S.Itens>
       </S.Flex>
-    </S.topcategory>
+    </S.Topcategory>
   );
 };
 

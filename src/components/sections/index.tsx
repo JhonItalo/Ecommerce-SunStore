@@ -4,7 +4,8 @@ interface propsk {
   children: React.ReactNode;
 }
 const Sections = ({ children }: propsk) => {
-  return <S.sections>{children}</S.sections>;
+  console.log("sections render");
+  return <S.Sections>{children}</S.Sections>;
 };
 
 export default Sections;

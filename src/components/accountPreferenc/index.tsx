@@ -2,20 +2,21 @@ import * as S from "./styles";
 
 import { MdKeyboardArrowDown } from "react-icons/md";
 const AccountPreferenc = () => {
+  console.log("render accountPrefer");
   return (
     <S.AccPref>
-      <S.icons>
+      <S.Icons>
         <span>USD</span>
         <MdKeyboardArrowDown />
-      </S.icons>
-      <S.icons>
+      </S.Icons>
+      <S.Icons>
         <span>English</span>
         <MdKeyboardArrowDown />
-      </S.icons>
-      <S.icons>
+      </S.Icons>
+      <S.Icons>
         <span>My Account</span>
         <MdKeyboardArrowDown />
-      </S.icons>
+      </S.Icons>
     </S.AccPref>
   );
 };

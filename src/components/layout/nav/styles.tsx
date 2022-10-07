@@ -4,7 +4,7 @@ interface propsLi {
   active?: string;
 }
 
-export const nav = styled.nav`
+export const Nav = styled.nav`
   width: 100%;
   height: 6.5vh;
   font-weight: 500;
@@ -20,7 +20,7 @@ export const nav = styled.nav`
     gap: 1.5rem;
   }
 `;
-export const li = styled.li<propsLi>`
+export const Li = styled.li<propsLi>`
   height: inherit;
   padding-left: 0.2rem;
   display: flex;
@@ -32,7 +32,7 @@ export const li = styled.li<propsLi>`
     color: ${({ theme }) => theme.colors.bege};
   }
 `;
-export const navlink = styled.a`
+export const Navlink = styled.a`
   cursor: pointer;
 
   display: flex;

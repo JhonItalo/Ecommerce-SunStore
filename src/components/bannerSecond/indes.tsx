@@ -2,9 +2,10 @@ import Link from "next/link";
 import * as S from "./styles";
 
 const bannerSecond = () => {
+  console.log("render banner second");
   return (
-    <S.bannerSecond>
-      <S.item>
+    <S.ConteinerBannerSecond>
+      <S.Item>
         <img
           src="/assets/bannerSecond-cadeira.webp"
           alt="Cadeira"
@@ -15,22 +16,22 @@ const bannerSecond = () => {
           <p className="titleFirst">Seating</p>
           <p>New Collection</p>
           <Link href="/shop">
-            <S.bannerLink>Shop Now</S.bannerLink>
+            <S.BannerLink>Shop Now</S.BannerLink>
           </Link>
         </div>
-      </S.item>
+      </S.Item>
 
-      <S.item>
+      <S.Item>
         <div>
           <p className="titleFirst">Modern</p>
           <p>Sofa Suniture</p>
           <Link href="/shop">
-            <S.bannerLink>Shop Now</S.bannerLink>
+            <S.BannerLink>Shop Now</S.BannerLink>
           </Link>
         </div>
         <img src="/assets/bannerSecond-sofa.webp" alt="sofa" width="44%" />
-      </S.item>
-    </S.bannerSecond>
+      </S.Item>
+    </S.ConteinerBannerSecond>
   );
 };
 

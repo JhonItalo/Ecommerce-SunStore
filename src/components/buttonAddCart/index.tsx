@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import * as S from "./styles";
 import { CartContext } from "../../context/CarrinhoContext";
 import UseAddCart from "../../hooks/UseAddCart";
 interface props {
@@ -7,19 +6,19 @@ interface props {
   id: number;
 }
 const ButtonAddCart = ({ title, id }: props) => {
+ // console.log("render button cart");
   const { AttCart, setAttCart } = useContext(CartContext);
-  const { setAdcionarCarrinho } = UseAddCart({ title, id });
+  const { AdiconarCarrinho, setAdcionarCarrinho } = UseAddCart({ title, id });
+
+  const HandleClickAddCart = () => {
+    setAttCart(AttCart + 1);
+    setAdcionarCarrinho(AdiconarCarrinho + 1);
+  };
 
   return (
-    <S.AddCart
-      className="cart"
-      onClick={() => {
-        setAttCart(AttCart + 1);
-        setAdcionarCarrinho(true);
-      }}
-    >
+    <button className="cart" onClick={HandleClickAddCart}>
       Add to Cart
-    </S.AddCart>
+    </button>
   );
 };
 

@@ -4,7 +4,7 @@ export const AccPref = styled.div`
   display: flex;
   gap: 0.4rem;
 `;
-export const icons = styled.div`
+export const Icons = styled.div`
   font-size: 0.8rem;
   font-weight: 300;
   display: flex;

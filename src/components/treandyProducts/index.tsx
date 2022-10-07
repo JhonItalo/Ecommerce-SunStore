@@ -19,34 +19,37 @@ const TreandyProducts = ({ newP, feature, best }: props) => {
   const [opcListaProdutos, setopcListaProdutos] = useState<string>("new");
   return (
     <>
-      <S.treandyProducts>
+      <S.TreandyProducts>
         <TitleSection title="Lastest Items" subtitle="Treandy Products" />
 
-        <S.opcoes>
-          <S.button
+        <S.Opcoes>
+          <S.Button
             onClick={() => setopcListaProdutos("new")}
             active={opcListaProdutos === "new"}
           >
             New Products
-          </S.button>
-          <S.button
+          </S.Button>
+          <S.Button
             onClick={() => setopcListaProdutos("feature")}
             active={opcListaProdutos === "feature"}
           >
             Feature Products
-          </S.button>
-          <S.button
+          </S.Button>
+          <S.Button
             onClick={() => setopcListaProdutos("best")}
             active={opcListaProdutos === "best"}
           >
             Best Seller
-          </S.button>
-        </S.opcoes>
+          </S.Button>
+        </S.Opcoes>
 
-        <S.listProducts>
+        <S.ListProducts>
           {opcListaProdutos === "new" &&
             newP.map((items) => (
               <Products
+                type="s"
+                width="22%"
+                height="380px"
                 key={items.id}
                 title={items.title}
                 path={items.poster_path}
@@ -57,6 +60,9 @@ const TreandyProducts = ({ newP, feature, best }: props) => {
           {opcListaProdutos === "feature" &&
             feature.map((items) => (
               <Products
+                type="s"
+                width="22%"
+                height="380px"
                 key={items.id}
                 title={items.title}
                 path={items.poster_path}
@@ -67,14 +73,17 @@ const TreandyProducts = ({ newP, feature, best }: props) => {
           {opcListaProdutos === "best" &&
             best.map((items) => (
               <Products
+                type="s"
+                width="22%"
+                height="380px"
                 key={items.id}
                 title={items.title}
                 path={items.poster_path}
                 id={items.id}
               />
             ))}
-        </S.listProducts>
-      </S.treandyProducts>
+        </S.ListProducts>
+      </S.TreandyProducts>
     </>
   );
 };

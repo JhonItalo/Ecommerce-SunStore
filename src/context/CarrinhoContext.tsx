@@ -10,7 +10,9 @@ interface context {
 }
 const defaultValue = {
   AttCart: 0,
-  setAttCart: () => {},
+  setAttCart: () => {
+    //nothing
+  },
 };
 
 export const CartContext = createContext<context>(defaultValue);
@@ -20,25 +22,19 @@ function CarrinhoContext({ children }: props) {
   const [AttCart, setAttCart] = useState<number>(0);
 
   useEffect(() => {
-    console.log("effect");
     if (typeof localStorage.getItem("carrinho") != typeof "string") {
       localStorage.setItem("carrinho", "[]");
       console.log("if");
     } else {
-      console.log("else");
       const responseString = localStorage.getItem("carrinho");
-      const responseArray = JSON.parse(responseString);
+      const responseArray = JSON.parse(responseString!);
       setAttCart(responseArray.length);
     }
   }, []);
 
   console.log(AttCart, "contexto");
 
-  return (
-    <CartContext.Provider value={{ AttCart, setAttCart }}>
-      {children}
-    </CartContext.Provider>
-  );
+  return <CartContext.Provider value={{ AttCart, setAttCart }}>{children}</CartContext.Provider>;
 }
 
 export default CarrinhoContext;

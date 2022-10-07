@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const topcategory = styled.section`
+export const Topcategory = styled.section`
   width: 100%;
   margin-top: 4rem;
   display: flex;
@@ -17,7 +17,7 @@ export const Flex = styled.div`
   padding: 0 1.5rem;
   //border: 1px solid red;
 `;
-export const itens = styled.div`
+export const Itens = styled.div`
   width: 10.5vw;
   display: flex;
   flex-direction: column;
@@ -31,7 +31,7 @@ export const itens = styled.div`
   }
 `;
 
-export const cards = styled.a`
+export const Cards = styled.a`
   width: 100%;
   height: 150px;
   display: flex;

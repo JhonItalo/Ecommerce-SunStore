@@ -1,8 +1,14 @@
 import React from "react";
 import * as S from "./styles";
-import { AiOutlineCopyrightCircle } from "react-icons/ai";
+import {
+  AiOutlineCopyrightCircle,
+  AiFillLinkedin,
+  AiFillGithub,
+} from "react-icons/ai";
+import Link from "next/link";
 
 const Footer = () => {
+  console.log("render footer");
   return (
     <S.Footer>
       <p>
@@ -11,7 +17,18 @@ const Footer = () => {
           <AiOutlineCopyrightCircle />
         </span>
       </p>
-      <p>By: John Ítalo</p>
+      <S.Redes>
+        <Link href="https://www.linkedin.com/in/johnitalodev/">
+          <a>
+            <AiFillLinkedin />
+          </a>
+        </Link>
+        <Link href="https://github.com/JhonItalo">
+          <a>
+            <AiFillGithub />
+          </a>
+        </Link>
+      </S.Redes>
     </S.Footer>
   );
 };

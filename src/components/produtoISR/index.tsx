@@ -2,14 +2,13 @@ import * as S from "./styles";
 import Image from "next/image";
 import ButtonAddCart from "../buttonAddCart";
 import ButtonAddFavoritos from "../buttonAddFavoritos";
-import { AiOutlineHeart } from "react-icons/ai";
+import { AiOutlineStar } from "react-icons/ai";
 
 interface props {
   produto: any;
 }
 
 const ProdutoISR = ({ produto }: props) => {
-  //console.log(produto);
   return (
     <S.conteinerProduto>
       <S.ConteinerImage>
@@ -27,16 +26,19 @@ const ProdutoISR = ({ produto }: props) => {
           <h2 className="title">{produto.title}</h2>
           <p className="subtitle">{produto.tagline}</p>
         </S.titles>
+
         <S.Descricao>
           <span>Descrição: </span>
           <p>{produto.overview}</p>
         </S.Descricao>
+
         <S.genero>
           <span className="genre">Genêro:</span>
           {produto.genres.map((item: any) => (
             <p key={item.id}>{`- ${item.name} -`}</p>
           ))}
         </S.genero>
+
         <S.Producao>
           <span>Produção -</span>
           {produto.production_companies.map((item: any) => (
@@ -51,6 +53,11 @@ const ProdutoISR = ({ produto }: props) => {
           <ButtonAddCart title={produto.title} id={produto.id} />
         </S.buttons>
       </S.ConteinerInfos>
+
+      <S.Nota>
+        <p>{produto.vote_average.toFixed(1)}</p>
+        <AiOutlineStar />
+      </S.Nota>
     </S.conteinerProduto>
   );
 };

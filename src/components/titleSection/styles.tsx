@@ -14,7 +14,7 @@ export const title = styled.div`
     font-weight: 700;
   }
 `;
-export const bestItens = styled.div`
+export const Itens = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;

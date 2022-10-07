@@ -7,11 +7,11 @@ const TitleSection = ({ title, subtitle }: props) => {
   return (
     <>
       <S.title>
-        <S.bestItens>
+        <S.Itens>
           <div></div>
           <span> {title}</span>
           <div></div>
-        </S.bestItens>
+        </S.Itens>
         <h2>{subtitle}</h2>
       </S.title>
     </>

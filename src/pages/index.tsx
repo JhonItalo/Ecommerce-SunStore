@@ -5,6 +5,7 @@ import { GetStaticProps } from "next";
 import Sections from "../components/sections";
 import TopCategory from "../components/topCategory";
 import TreandyProducts from "../components/treandyProducts";
+import { filmes } from "../request/HomeFetch";
 
 interface objectmodel {
   title: string;
@@ -35,43 +36,13 @@ export default function Home({ newP, feature, best }: props) {
     </>
   );
 }
-
-export const requisicao = async (api: string, array: objectmodel[]) => {
-  let object: objectmodel;
-  const req = await fetch(api);
-  const response = await req.json();
-  response.results.slice(0, 8).map((items: any) => {
-    object = {
-      title: items.title,
-      id: items.id,
-      poster_path: items.poster_path,
-    };
-    array.push(object);
-  });
-};
 export const getStaticProps: GetStaticProps = async () => {
-  const newP: objectmodel[] = [];
-  const feature: objectmodel[] = [];
-  const best: objectmodel[] = [];
-
-  await requisicao(
-    "https://api.themoviedb.org/3/movie/popular?api_key=617375c16cb7cbacc59f9c2b6102e4e4&language=pt-BR&page=1",
-    newP
-  );
-  await requisicao(
-    "https://api.themoviedb.org/3/movie/top_rated?api_key=617375c16cb7cbacc59f9c2b6102e4e4&language=pt-BR&page=1",
-    feature
-  );
-  await requisicao(
-    "https://api.themoviedb.org/3/movie/upcoming?api_key=617375c16cb7cbacc59f9c2b6102e4e4&language=pt-BR&page=1",
-    best
-  );
-
+  const data: props = await filmes();
   return {
     props: {
-      newP: newP,
-      feature: feature,
-      best: best,
+      newP: data.newP,
+      feature: data.feature,
+      best: data.best,
     },
   };
 };

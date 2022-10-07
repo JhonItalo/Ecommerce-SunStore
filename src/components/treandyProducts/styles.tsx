@@ -1,10 +1,9 @@
 import styled from "styled-components";
-import { memo } from "react";
 
 interface propsButton {
   active: boolean;
 }
-export const treandyProducts = styled.section`
+export const TreandyProducts = styled.section`
   width: 100%;
   margin-top: 4rem;
   margin-bottom: 4rem;
@@ -13,10 +12,10 @@ export const treandyProducts = styled.section`
   justify-content: center;
   align-items: center;
   padding: 0 2rem;
-  border: 1px solid black;
-  // background-color: ${({ theme }) => theme.colors.greyCard};
+
+  background-color: rgba(200, 200, 170, 0.3);
 `;
-export const opcoes = styled.div`
+export const Opcoes = styled.div`
   margin-top: 2rem;
   margin-bottom: 1.5rem;
   display: flex;
@@ -25,7 +24,7 @@ export const opcoes = styled.div`
   gap: 1rem;
 `;
 
-export const button = styled.button<propsButton>`
+export const Button = styled.button<propsButton>`
   font-size: 0.8rem;
   padding: 0.5rem 1rem;
   font-weight: bold;
@@ -35,7 +34,7 @@ export const button = styled.button<propsButton>`
   background-color: ${({ active, theme }) =>
     active === true ? theme.colors.bege : "white"};
 `;
-export const listProducts = styled.div`
+export const ListProducts = styled.div`
   width: 100%;
   display: flex;
   flex-wrap: wrap;

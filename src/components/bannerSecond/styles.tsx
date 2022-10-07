@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-export const bannerSecond = styled.section`
+export const ConteinerBannerSecond = styled.section`
   width: 100%;
   height: 32.5vh;
   display: flex;
   justify-content: space-between;
   overflow: hidden;
 `;
-export const item = styled.div`
+export const Item = styled.div`
   width: 49%;
   height: 100%;
   padding: 0 2rem;
@@ -35,7 +35,7 @@ export const item = styled.div`
     }
   }
 `;
-export const bannerLink = styled.a`
+export const BannerLink = styled.a`
   cursor: pointer;
   width: 7rem;
   height: 2rem;

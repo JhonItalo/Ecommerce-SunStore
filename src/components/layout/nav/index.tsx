@@ -7,69 +7,70 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 const Nav = () => {
   console.log("nav render");
   const rotaAtual = useRouter();
+  
   const borderActive = (opc: string) => {
     return rotaAtual.pathname === opc ? "active" : "";
   };
   //
 
   return (
-    <S.nav>
+    <S.Nav>
       <ul>
-        <S.li active={borderActive("/")}>
+        <S.Li active={borderActive("/")}>
           <Link href="/">
-            <S.navlink>Home</S.navlink>
+            <S.Navlink>Home</S.Navlink>
           </Link>
-        </S.li>
+        </S.Li>
 
-        <S.li active={borderActive("/shop")}>
+        <S.Li active={borderActive("/shop")}>
           <Link href="/shop">
-            <S.navlink>
+            <S.Navlink>
               Shop
               <MdKeyboardArrowDown />
-            </S.navlink>
+            </S.Navlink>
           </Link>
-        </S.li>
+        </S.Li>
 
-        <S.li active={borderActive("/decorations")}>
+        <S.Li active={borderActive("/decorations")}>
           <Link href="/decorations">
-            <S.navlink>Decorations</S.navlink>
+            <S.Navlink>Decorations</S.Navlink>
           </Link>
-        </S.li>
+        </S.Li>
 
-        <S.li active={borderActive("/chair")}>
+        <S.Li active={borderActive("/chair")}>
           <Link href="/chair">
-            <S.navlink>Chair</S.navlink>
+            <S.Navlink>Chair</S.Navlink>
           </Link>
-        </S.li>
+        </S.Li>
 
-        <S.li active={borderActive("/topsale")}>
+        <S.Li active={borderActive("/topsale")}>
           <Link href="/topsale">
-            <S.navlink>Top sale</S.navlink>
+            <S.Navlink>Top sale</S.Navlink>
           </Link>
-        </S.li>
+        </S.Li>
 
-        <S.li active={borderActive("/brands")}>
+        <S.Li active={borderActive("/brands")}>
           <Link href="/brands">
-            <S.navlink>Brands</S.navlink>
+            <S.Navlink>Brands</S.Navlink>
           </Link>
-        </S.li>
+        </S.Li>
 
-        <S.li active={borderActive("/blog")}>
+        <S.Li active={borderActive("/blog")}>
           <Link href="/blog">
-            <S.navlink>Blog</S.navlink>
+            <S.Navlink>Blog</S.Navlink>
           </Link>
-        </S.li>
+        </S.Li>
 
-        <S.li active={borderActive("/more")}>
+        <S.Li active={borderActive("/more")}>
           <Link href="/more">
-            <S.navlink>
+            <S.Navlink>
               More
               <MdKeyboardArrowDown />
-            </S.navlink>
+            </S.Navlink>
           </Link>
-        </S.li>
+        </S.Li>
       </ul>
-    </S.nav>
+    </S.Nav>
   );
 };
 

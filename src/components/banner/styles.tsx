@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const conteinerBanner = styled.div`
+export const ConteinerBanner = styled.div`
   width: 100%;
   height: 70vh;
   margin-top: 1px;
@@ -11,7 +11,7 @@ export const conteinerBanner = styled.div`
   align-items: center;
 `;
 
-export const texto = styled.div`
+export const Text = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: 15%;
@@ -36,7 +36,7 @@ export const texto = styled.div`
     }
   }
 `;
-export const bannerLink = styled.a`
+export const BannerLink = styled.a`
   cursor: pointer;
   width: 10rem;
   height: 2.5rem;

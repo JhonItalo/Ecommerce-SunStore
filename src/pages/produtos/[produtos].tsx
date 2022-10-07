@@ -9,10 +9,10 @@ const produtos = ({ produto, error }: props) => {
   console.log(produto, error);
 
   return (
-    <>
+    <main>
       {error && <ErrorISR />}
       {error === false && <ProdutoISR produto={produto} />};
-    </>
+    </main>
   );
 };
 

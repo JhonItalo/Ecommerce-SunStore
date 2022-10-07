@@ -6,10 +6,15 @@ export const Footer = styled.footer`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 0.3rem;
   background-color: ${({ theme }) => theme.colors.grey};
-
-  text-align: center;
   span {
-    margin-left: 0.3rem;
+    margin-left: 0.2rem;
+  }
+`;
+export const Redes = styled.div`
+  font-size: 1.8rem;
+  a {
+    margin-right: 0.2rem;
   }
 `;

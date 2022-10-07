@@ -10,7 +10,9 @@ interface context {
 }
 const defaultValue = {
   Attfav: 0,
-  setAttfav: () => {},
+  setAttfav: () => {
+    //nothing
+  },
 };
 
 export const FavoritoContext = createContext<context>(defaultValue);
@@ -21,14 +23,11 @@ function FavContext({ children }: props) {
   const [Attfav, setAttfav] = useState<number>(0);
 
   useEffect(() => {
-    console.log("effect");
     if (typeof localStorage.getItem("favorito") != typeof "string") {
       localStorage.setItem("favorito", "[]");
-      console.log("if");
     } else {
-      console.log("else");
       const responseString = localStorage.getItem("favorito");
-      const responseArray = JSON.parse(responseString);
+      const responseArray = JSON.parse(responseString!);
       setAttfav(responseArray.length);
     }
   }, []);
@@ -36,9 +35,7 @@ function FavContext({ children }: props) {
   console.log(Attfav, "contexto");
 
   return (
-    <FavoritoContext.Provider value={{ Attfav, setAttfav }}>
-      {children}
-    </FavoritoContext.Provider>
+    <FavoritoContext.Provider value={{ Attfav, setAttfav }}>{children}</FavoritoContext.Provider>
   );
 }
 

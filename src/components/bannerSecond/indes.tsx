@@ -6,12 +6,7 @@ const bannerSecond = () => {
   return (
     <S.ConteinerBannerSecond>
       <S.Item>
-        <img
-          src="/assets/bannerSecond-cadeira.webp"
-          alt="Cadeira"
-          width="45%"
-          height="auto"
-        />
+        <img src="/assets/bannerSecond-cadeira.webp" alt="Cadeira" width="45%" height="auto" />
         <div className="left">
           <p className="titleFirst">Seating</p>
           <p>New Collection</p>

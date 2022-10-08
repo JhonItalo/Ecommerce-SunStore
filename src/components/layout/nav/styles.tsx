@@ -19,6 +19,9 @@ export const Nav = styled.nav`
     display: flex;
     gap: 1.5rem;
   }
+  @media (max-width: 748px) {
+    display: none;
+  }
 `;
 export const Li = styled.li<propsLi>`
   height: inherit;
@@ -26,7 +29,6 @@ export const Li = styled.li<propsLi>`
   display: flex;
   align-items: center;
   border-bottom: ${({ active }) => (active ? "2px solid #BAAA55" : "")};
-   
 
   &:hover {
     color: ${({ theme }) => theme.colors.bege};

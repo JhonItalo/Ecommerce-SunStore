@@ -71,4 +71,7 @@ export const ConteinerBusca = styled.div<props>`
       border-radius: 20%;
     }
   }
+  @media (max-width: 748px) {
+    display: none;
+  }
 `;

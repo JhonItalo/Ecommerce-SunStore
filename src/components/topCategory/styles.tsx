@@ -8,14 +8,24 @@ export const Topcategory = styled.section`
   justify-content: center;
   align-items: center;
   gap: 3rem;
-  //border: 1px solid yellow;
+
+  @media (max-width: 748px) {
+    margin-top: 3rem;
+    gap: 2rem;
+  }
 `;
 export const Flex = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 0 1.5rem;
-  //border: 1px solid red;
+  @media (max-width: 748px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0;
+  }
 `;
 export const Itens = styled.div`
   width: 10.5vw;
@@ -28,6 +38,9 @@ export const Itens = styled.div`
   span {
     font-size: 1.1rem;
     font-weight: 500;
+  }
+  @media (max-width: 748px) {
+    width: 100px;
   }
 `;
 
@@ -53,5 +66,8 @@ export const Cards = styled.a`
     align-items: center;
     border: 2px solid rgba(0, 0, 0, 0.2);
     cursor: pointer;
+  }
+  @media (max-width: 748px) {
+    height: 100px;
   }
 `;

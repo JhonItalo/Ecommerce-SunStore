@@ -39,6 +39,11 @@ button{
         font-size: 15px;
     } 
 }
+@media (max-width: 748px) {
+    html{
+        font-size: 12px;
+    }
+  }
 `
 export default GlobalStyles;
 

@@ -13,6 +13,11 @@ export const title = styled.div`
     text-transform: uppercase;
     font-weight: 700;
   }
+  @media (max-width: 748px) {
+    h2 {
+      font-size: 1rem;
+    }
+  }
 `;
 export const Itens = styled.div`
   display: flex;

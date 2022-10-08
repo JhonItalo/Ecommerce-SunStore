@@ -7,7 +7,6 @@ const TopCategory = () => {
   return (
     <S.Topcategory>
       <TitleSection title="Best Itens" subtitle="Top category" />
-
       <S.Flex>
         <S.Itens>
           <Link href="/shop">

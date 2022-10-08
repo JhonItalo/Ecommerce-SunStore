@@ -6,6 +6,9 @@ export const ConteinerBannerSecond = styled.section`
   display: flex;
   justify-content: space-between;
   overflow: hidden;
+  @media (max-width: 748px) {
+    height: 20vh;
+  }
 `;
 export const Item = styled.div`
   width: 49%;
@@ -14,11 +17,12 @@ export const Item = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   background-color: ${({ theme }) => theme.colors.greyCard};
+
   .left {
     align-items: end;
   }
+
   div {
     display: flex;
     flex-direction: column;
@@ -32,6 +36,39 @@ export const Item = styled.div`
     .titleFirst {
       font-size: 1.5rem;
       font-style: normal;
+    }
+  }
+  @media (max-width: 748px) {
+    flex-direction: column;
+    position: relative;
+    padding: 0;
+    align-items: none;
+    justify-content: start;
+    gap: 0.5rem;
+    .left {
+      align-items: inherit;
+    }
+    img {
+      order: 2;
+      width: 60%;
+      height: 50%;
+    }
+    div {
+      width: 100%;
+      align-items: center;
+      order: 1;
+      p {
+        font-size: 1rem;
+      }
+      a {
+        position: absolute;
+        bottom: 1rem;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 4rem;
+        height: 1rem;
+        font-size: 0.5rem;
+      }
     }
   }
 `;

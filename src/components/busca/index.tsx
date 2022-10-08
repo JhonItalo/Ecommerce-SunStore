@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import Router, { useRouter } from "next/router";
 import * as S from "./styles";
 import { HiOutlineSearch } from "react-icons/hi";
 import { RequestFilmesSearch } from "../../request/FilmesSearchInput";
@@ -9,6 +10,7 @@ interface responsemodel {
 }
 
 const Busca = () => {
+  const resetcomponent = useRouter();
   console.log("busca render");
   const [active, setactive] = useState<string>("off");
   const [filmes, setfilmes] = useState<any | null>(null);
@@ -20,6 +22,11 @@ const Busca = () => {
       inputRef.current!.focus();
     }
   }, [active, filmes]);
+
+  useEffect(() => {
+    setactive("off");
+    setSearch("");
+  }, [resetcomponent]);
 
   const handleClickBusca = async () => {
     setactive("on");

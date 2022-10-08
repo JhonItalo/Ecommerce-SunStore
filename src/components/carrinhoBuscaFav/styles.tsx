@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const icons = styled.div`
   display: flex;
   justify-content: baseline;
@@ -11,7 +10,9 @@ export const icons = styled.div`
     cursor: pointer;
     font-size: 1.8rem;
   }
+  @media (max-width: 748px) {
+    svg {
+      font-size: 1.8rem;
+    }
+  }
 `;
-
-
-

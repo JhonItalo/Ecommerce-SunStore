@@ -5,6 +5,10 @@ export const Header = styled.header`
   height: 9vh;
   border-bottom: 1px solid ${({ theme }) => theme.colors.greyBorder};
   background-color: ${({ theme }) => theme.colors.grey};
+
+  @media (max-width: 748px) {
+    height: 6vh;
+  }
 `;
 export const Content = styled.div`
   width: 80%;
@@ -14,5 +18,7 @@ export const Content = styled.div`
   align-items: center;
   justify-content: space-between;
   position: relative;
-
+  @media (max-width: 748px) {
+    width: 95%;
+  }
 `;

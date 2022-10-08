@@ -15,4 +15,7 @@ export const Icons = styled.div`
   svg {
     height: 100%;
   }
+  @media (max-width: 748px) {
+    display: none;
+  }
 `;

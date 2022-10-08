@@ -19,4 +19,11 @@ export const Carrinho = styled.div`
     border-radius: 50%;
     background-color: ${({ theme }) => theme.colors.bege};
   }
+  @media (max-width: 748px) {
+    span {
+      width: 0.9rem;
+      height: 0.9rem;
+      font-size: 0.5rem;
+    }
+  }
 `;

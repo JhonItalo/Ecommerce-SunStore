@@ -12,8 +12,10 @@ export const TreandyProducts = styled.section`
   justify-content: center;
   align-items: center;
   padding: 0 2rem;
-
   background-color: rgba(200, 200, 170, 0.3);
+  @media (max-width: 748px) {
+    padding: 0;
+  }
 `;
 export const Opcoes = styled.div`
   margin-top: 2rem;
@@ -22,6 +24,11 @@ export const Opcoes = styled.div`
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  @media (max-width: 748px) {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 1rem;
+  }
 `;
 
 export const Button = styled.button<propsButton>`
@@ -31,13 +38,23 @@ export const Button = styled.button<propsButton>`
   border: 1px solid ${({ theme }) => theme.colors.greyBorder};
 
   color: ${({ active }) => (active === true ? "white" : "rgba(0, 0, 0, 0.6)")};
-  background-color: ${({ active, theme }) =>
-    active === true ? theme.colors.bege : "white"};
+  background-color: ${({ active, theme }) => (active === true ? theme.colors.bege : "white")};
+  @media (max-width: 748px) {
+  }
 `;
 export const ListProducts = styled.div`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  overflow: hidden;
+  overflow: scroll;
+  @media (max-width: 748px) {
+    flex-wrap: nowrap;
+    gap: 1rem;
+    .mediaQueryControlParentProduct {
+      width: 150px;
+      height: 300px;
+      flex: none;
+    }
+  }
 `;

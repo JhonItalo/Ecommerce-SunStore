@@ -18,7 +18,7 @@ interface props {
 const Products = ({ title, path, id, width, height, type }: props) => {
   console.log("render produto");
   return (
-    <S.Itens width={width} height={height} type={type}>
+    <S.Itens width={width} height={height} type={type} className="mediaQueryControlParentProduct">
       <div className="ConteinerImage">
         <Link href={`produtos/${id}`}>
           <a>

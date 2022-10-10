@@ -1,8 +1,8 @@
 import * as S from "./styles";
-import CarrinhoBuscaFav from "../../carrinhoBuscaFav";
-import AccountPreferenc from "../../accountPreferenc";
-import Logo from "../../logo";
-import MenuMobile from "../../menuMobile";
+import CarrinhoBuscaFav from "../../components/carrinhoBuscaFav";
+import AccountPreferenc from "../../components/accountPreferenc";
+import Logo from "../../components/logo";
+import MenuMobile from "../../components/menuMobile";
 
 const Header = () => {
   console.log("header render");

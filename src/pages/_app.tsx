@@ -3,9 +3,9 @@ import { ThemeProvider } from "styled-components";
 
 import GlobalStyles from "../../styles/global";
 import themes from "../../styles/themes";
-import Footer from "../components/layout/footer";
-import Header from "../components/layout/header";
-import Nav from "../components/layout/nav";
+import Footer from "../Layout/footer";
+import Header from "../Layout/header";
+import Nav from "../Layout/nav";
 import CarrinhoContext from "../context/CarrinhoContext";
 import FavContext from "../context/FavContext";
 

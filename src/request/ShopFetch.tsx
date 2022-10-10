@@ -1,12 +1,12 @@
-interface response {
+interface FilmesMedian {
   title: string[];
   id: number[];
   poster_path: string[];
   vote_average: number[];
 }
 const request = async (url: string) => {
-  let item: response;
-  const itemRequestFilmes: response[] = [];
+  let item: FilmesMedian;
+  const itemRequestFilmes: FilmesMedian[] = [];
   const req = await fetch(url);
   const response = await req.json();
   for (let i = 0; i < response.results.length; i++) {

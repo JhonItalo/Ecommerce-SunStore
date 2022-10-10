@@ -7,15 +7,15 @@ import TopCategory from "../components/topCategory";
 import TreandyProducts from "../components/treandyProducts";
 import { filmes } from "../request/HomeFetch";
 
-interface objectmodel {
+interface FilmesShort {
   title: string;
   id: number;
   poster_path: string;
 }
 interface props {
-  newP: objectmodel[];
-  feature: objectmodel[];
-  best: objectmodel[];
+  newP: FilmesShort[];
+  feature: FilmesShort[];
+  best: FilmesShort[];
 }
 
 export default function Home({ newP, feature, best }: props) {

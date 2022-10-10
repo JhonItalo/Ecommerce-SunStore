@@ -6,7 +6,6 @@ interface props {
   id: number;
 }
 const ButtonAddCart = ({ title, id }: props) => {
- // console.log("render button cart");
   const { AttCart, setAttCart } = useContext(CartContext);
   const { AdiconarCarrinho, setAdcionarCarrinho } = UseAddCart({ title, id });
 

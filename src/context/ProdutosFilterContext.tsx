@@ -27,7 +27,7 @@ const defaultValueContext = {
     // do nothing.
   },
 };
-const removeDuplicateFilmes = (array: response[]) => {
+export const removeDuplicateFilmes = (array: response[]) => {
   for (let h = 0; h < array.length; h++) {
     for (let l = h + 1; l < array.length; l++) {
       if (array[h].title === array[l].title) {

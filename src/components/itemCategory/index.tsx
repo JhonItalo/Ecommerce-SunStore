@@ -10,14 +10,14 @@ interface props {
 const ItemCategory = ({ title, children }: props) => {
   const { Atualcategory, setAtualCategory } = useContext(ProdutosFilterContex);
 
-  const [active, setactive] = useState<boolean>(false);
+  const [activeSubCategory, setactiveSubCategory] = useState<boolean>(false);
 
   const handleDisableCategory = (e: React.SyntheticEvent) => {
     e.stopPropagation();
-    setactive(false);
+    setactiveSubCategory(false);
   };
   const handleActiveCategory = () => {
-    setactive(true);
+    setactiveSubCategory(true);
     if (Atualcategory === title) {
       setAtualCategory("");
     } else {
@@ -25,10 +25,10 @@ const ItemCategory = ({ title, children }: props) => {
     }
   };
   return (
-    <S.CategoryLi active={active} onClick={handleActiveCategory}>
+    <S.CategoryLi active={activeSubCategory} onClick={handleActiveCategory}>
       <S.Topic>
         <p>{title}</p>
-        {active ? <CgMathMinus onClick={handleDisableCategory} /> : <CgMathPlus />}
+        {activeSubCategory ? <CgMathMinus onClick={handleDisableCategory} /> : <CgMathPlus />}
       </S.Topic>
       {children}
     </S.CategoryLi>

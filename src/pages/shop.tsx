@@ -2,18 +2,20 @@ import ShopNow from "../components/shopNow";
 import { GetServerSideProps } from "next";
 import { FetchFilmesCategory } from "../request/ShopFetch";
 import ProdutosFilterContext from "../context/ProdutosFilterContext";
-interface response {
+
+interface FilmesMedian {
   title: string[];
   id: number[];
   poster_path: string[];
+  vote_average: number[];
 }
 
 interface props {
-  chair: response[];
-  bed: response[];
-  workDesk: response[];
-  table: response[];
-  sofaSet: response[];
+  chair: FilmesMedian[];
+  bed: FilmesMedian[];
+  workDesk: FilmesMedian[];
+  table: FilmesMedian[];
+  sofaSet: FilmesMedian[];
 }
 
 const shop = ({ chair, bed, workDesk, table, sofaSet }: props) => {
@@ -41,4 +43,3 @@ export const getServerSideProps: GetServerSideProps = async () => {
     },
   };
 };
-

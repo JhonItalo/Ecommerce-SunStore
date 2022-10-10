@@ -24,7 +24,6 @@ function CarrinhoContext({ children }: props) {
   useEffect(() => {
     if (typeof localStorage.getItem("carrinho") != typeof "string") {
       localStorage.setItem("carrinho", "[]");
-      console.log("if");
     } else {
       const responseString = localStorage.getItem("carrinho");
       const responseArray = JSON.parse(responseString!);

@@ -1,6 +1,11 @@
 import { GetStaticProps, GetStaticPaths } from "next";
 import ErrorISR from "../../components/errorISR";
 import ProdutoISR from "../../components/produtoISR";
+import { ParsedUrlQuery } from "querystring";
+
+interface IParams extends ParsedUrlQuery {
+  produtos: string;
+}
 interface props {
   produto: any;
   error: boolean;
@@ -28,7 +33,8 @@ export const buscaId = async (id: string) => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   let error = false;
-  const infos: any = await buscaId(context.params.produtos);
+  const { produtos } = context.params as IParams;
+  const infos: any = await buscaId(produtos);
 
   if (infos.success === false) {
     error = true;

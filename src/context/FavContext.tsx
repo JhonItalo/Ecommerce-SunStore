@@ -1,9 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import React from "react";
 
-interface props {
-  children: React.ReactNode;
-}
 interface context {
   Attfav: number;
   setAttfav: React.Dispatch<React.SetStateAction<number>>;
@@ -14,10 +11,12 @@ const defaultValue = {
     //nothing
   },
 };
-
 export const FavoritoContext = createContext<context>(defaultValue);
 
-function FavContext({ children }: props) {
+interface props {
+  children: React.ReactNode;
+}
+const FavContext = ({ children }: props) => {
   console.log("contexto renderizou fav");
 
   const [Attfav, setAttfav] = useState<number>(0);
@@ -37,6 +36,6 @@ function FavContext({ children }: props) {
   return (
     <FavoritoContext.Provider value={{ Attfav, setAttfav }}>{children}</FavoritoContext.Provider>
   );
-}
+};
 
 export default FavContext;

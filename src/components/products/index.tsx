@@ -8,14 +8,14 @@ import { AiOutlineHeart } from "react-icons/ai";
 
 interface props {
   title: string;
-  path: string;
+  poster_path: string;
   id: number;
   width: string;
   height: string;
   type: "s" | "l";
 }
 
-const Products = ({ title, path, id, width, height, type }: props) => {
+const Products = ({ title, poster_path, id, width, height, type }: props) => {
   console.log("render produto");
   return (
     <S.Itens width={width} height={height} type={type} className="mediaQueryControlParentProduct">
@@ -23,7 +23,7 @@ const Products = ({ title, path, id, width, height, type }: props) => {
         <Link href={`produtos/${id}`}>
           <a>
             <Image
-              src={`https://image.tmdb.org/t/p/w300${path}`}
+              src={`https://image.tmdb.org/t/p/w300${poster_path}`}
               layout="fill"
               objectFit="cover"
               objectPosition="center"
@@ -32,7 +32,7 @@ const Products = ({ title, path, id, width, height, type }: props) => {
           </a>
         </Link>
 
-        <ButtonAddFavoritos title={title} id={id}>
+        <ButtonAddFavoritos title={title} id={id} poster_path={poster_path}>
           <AiOutlineHeart />
         </ButtonAddFavoritos>
       </div>

@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import * as S from "./styles";
 import { CgMathPlus, CgMathMinus } from "react-icons/cg";
 import { ProdutosFilterContex } from "../../context/ProdutosFilterContext";
+
 interface props {
   title: string;
   children?: React.ReactNode;

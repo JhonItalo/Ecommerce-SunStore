@@ -1,6 +1,7 @@
 import Link from "next/link";
 import * as S from "./styles";
 
+
 const bannerSecond = () => {
   console.log("render banner second");
   return (

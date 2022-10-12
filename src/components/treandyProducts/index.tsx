@@ -1,18 +1,13 @@
 import React, { useState } from "react";
-
 import TitleSection from "../titleSection";
 import Products from "../products";
 import * as S from "./styles";
+import { FilmesShort } from "../../types";
 
-interface objectmodel {
-  title: string;
-  id: number;
-  poster_path: string;
-}
 interface props {
-  newP: objectmodel[];
-  feature: objectmodel[];
-  best: objectmodel[];
+  newP: FilmesShort[];
+  feature: FilmesShort[];
+  best: FilmesShort[];
 }
 const TreandyProducts = ({ newP, feature, best }: props) => {
   console.log("trendly render");
@@ -23,10 +18,7 @@ const TreandyProducts = ({ newP, feature, best }: props) => {
         <TitleSection title="Lastest Items" subtitle="Treandy Products" />
 
         <S.Opcoes>
-          <S.Button
-            onClick={() => setopcListaProdutos("new")}
-            active={opcListaProdutos === "new"}
-          >
+          <S.Button onClick={() => setopcListaProdutos("new")} active={opcListaProdutos === "new"}>
             New Products
           </S.Button>
           <S.Button
@@ -52,7 +44,7 @@ const TreandyProducts = ({ newP, feature, best }: props) => {
                 height="380px"
                 key={items.id}
                 title={items.title}
-                path={items.poster_path}
+                poster_path={items.poster_path}
                 id={items.id}
               />
             ))}
@@ -65,7 +57,7 @@ const TreandyProducts = ({ newP, feature, best }: props) => {
                 height="380px"
                 key={items.id}
                 title={items.title}
-                path={items.poster_path}
+                poster_path={items.poster_path}
                 id={items.id}
               />
             ))}
@@ -78,7 +70,7 @@ const TreandyProducts = ({ newP, feature, best }: props) => {
                 height="380px"
                 key={items.id}
                 title={items.title}
-                path={items.poster_path}
+                poster_path={items.poster_path}
                 id={items.id}
               />
             ))}

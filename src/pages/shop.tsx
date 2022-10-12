@@ -2,13 +2,8 @@ import ShopNow from "../components/shopNow";
 import { GetServerSideProps } from "next";
 import { FetchFilmesCategory } from "../request/ShopFetch";
 import ProdutosFilterContext from "../context/ProdutosFilterContext";
-
-interface FilmesMedian {
-  title: string[];
-  id: number[];
-  poster_path: string[];
-  vote_average: number[];
-}
+import { FilmesMedian } from "../types/";
+import Head from "next/head";
 
 interface props {
   chair: FilmesMedian[];
@@ -18,17 +13,25 @@ interface props {
   sofaSet: FilmesMedian[];
 }
 
-const shop = ({ chair, bed, workDesk, table, sofaSet }: props) => {
+export default function shop({ chair, bed, workDesk, table, sofaSet }: props) {
   console.log(chair);
   return (
-    <main>
-      <ProdutosFilterContext categorys={{ chair, bed, workDesk, table, sofaSet }}>
-        <ShopNow />
-      </ProdutosFilterContext>
-    </main>
+    <>
+      <Head>
+        <title>SunStore - Home</title>
+        <meta
+          name="keywords"
+          content="ecommerce, Sunstore, Chair, Bed, Table, Work Desk, Sofa-set"
+        />
+      </Head>
+      <main>
+        <ProdutosFilterContext categorys={{ chair, bed, workDesk, table, sofaSet }}>
+          <ShopNow />
+        </ProdutosFilterContext>
+      </main>
+    </>
   );
-};
-export default shop;
+}
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const { chair, bed, workDesk, table, sofaSet } = await FetchFilmesCategory();

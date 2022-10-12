@@ -6,7 +6,6 @@ interface props {
 
 export const ConteinerBusca = styled.div<props>`
   position: relative;
-
   ${({ active }) => {
     if (active) {
       return ` display: flex;
@@ -24,7 +23,6 @@ export const ConteinerBusca = styled.div<props>`
       `;
     }
   }}
-
   input {
     width: 90%;
     height: 80%;
@@ -47,7 +45,7 @@ export const ConteinerBusca = styled.div<props>`
     top: 102%;
     left: 5%;
     overflow-y: auto;
-    z-index: 1;
+    z-index: 2;
     li {
       padding: 3px 0;
       font-size: 1.23 rem;
@@ -72,6 +70,12 @@ export const ConteinerBusca = styled.div<props>`
     }
   }
   @media (max-width: 748px) {
-    display: none;
+    ${({ active }) => {
+      if (active) {
+        return ` 
+      width: 80%;
+      `;
+      }
+    }}
   }
 `;

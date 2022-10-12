@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
 import * as S from "./styles";
-/*
-interface objectmodel {
-  title: string;
-  id: number;
-}
-export const removeDuplicateFilmes = (array: objectmodel[]) => {
+import { FilmesShort } from "../../types";
+import ItemFav from "../ItemFav";
+
+export const removeDuplicateFilmes = (array: FilmesShort[]) => {
   for (let h = 0; h < array.length; h++) {
     for (let l = h + 1; l < array.length; l++) {
       if (array[h].title === array[l].title) {
@@ -15,12 +13,13 @@ export const removeDuplicateFilmes = (array: objectmodel[]) => {
     }
   }
   return array;
-};*/
+};
 const MeusFavortios = () => {
-  /*
-  const [fav, setfav] = useState<objectmodel[]>([]);
+  const [fav, setfav] = useState<FilmesShort[]>([]);
+  console.log(fav);
+
   useEffect(() => {
-    const n = localStorage.getItem("carrinho");
+    const n = localStorage.getItem("favorito");
     if (typeof n === typeof "string") {
       console.log(typeof n);
       const h = JSON.parse(n!);
@@ -28,12 +27,14 @@ const MeusFavortios = () => {
       setfav(removeDuplicateFilmes(h));
     }
   }, []);
-*/
+
   return (
-    <div>
-      teste
-      {/*fav.length > 0 && fav.map((item: objectmodel) => <li key={item.id}>{item.title}</li>)*/}
-    </div>
+    <S.Main>
+      <h2>Meus favoritos</h2>
+      <S.T>
+        {fav.length > 0 && fav.map((item: FilmesShort) => <ItemFav key={"f"} filme={item} />)}
+      </S.T>
+    </S.Main>
   );
 };
 

@@ -1,22 +1,8 @@
 import React, { createContext, useState, useEffect, useMemo, useCallback } from "react";
+import { FilmesMedian } from "../types";
 
-interface response {
-  title: string[];
-  id: number[];
-  poster_path: string[];
-}
-interface props {
-  categorys: {
-    chair: response[];
-    bed: response[];
-    workDesk: response[];
-    table: response[];
-    sofaSet: response[];
-  };
-  children: React.ReactNode;
-}
 interface propsContext {
-  FilmesFilter: response[];
+  FilmesFilter: FilmesMedian[];
   Atualcategory: string;
   setAtualCategory: React.Dispatch<React.SetStateAction<string>>;
 }
@@ -27,7 +13,9 @@ const defaultValueContext = {
     // do nothing.
   },
 };
-export const removeDuplicateFilmes = (array: response[]) => {
+export const ProdutosFilterContex = createContext<propsContext>(defaultValueContext);
+
+export const removeDuplicateFilmes = (array: FilmesMedian[]) => {
   for (let h = 0; h < array.length; h++) {
     for (let l = h + 1; l < array.length; l++) {
       if (array[h].title === array[l].title) {
@@ -38,9 +26,18 @@ export const removeDuplicateFilmes = (array: response[]) => {
   }
   return array;
 };
-
-export const ProdutosFilterContex = createContext<propsContext>(defaultValueContext);
 console.log("context produto");
+
+interface props {
+  categorys: {
+    chair: FilmesMedian[];
+    bed: FilmesMedian[];
+    workDesk: FilmesMedian[];
+    table: FilmesMedian[];
+    sofaSet: FilmesMedian[];
+  };
+  children: React.ReactNode;
+}
 
 const ProdutosFilterContext = ({ categorys, children }: props) => {
   console.log(categorys);
@@ -58,7 +55,7 @@ const ProdutosFilterContext = ({ categorys, children }: props) => {
   );
 
   const VerifyCategory = useCallback(
-    (s: string, set: React.Dispatch<React.SetStateAction<response[]>>) => {
+    (s: string, set: React.Dispatch<React.SetStateAction<FilmesMedian[]>>) => {
       switch (s) {
         case "Chair":
           set(categorys.chair);
@@ -83,7 +80,7 @@ const ProdutosFilterContext = ({ categorys, children }: props) => {
     [categorys, allfilmes]
   );
   const [Atualcategory, setAtualCategory] = useState<string>("");
-  const [FilmesFilter, setFilmesFilter] = useState<response[]>(allfilmes);
+  const [FilmesFilter, setFilmesFilter] = useState<FilmesMedian[]>(allfilmes);
 
   useEffect(() => {
     VerifyCategory(Atualcategory, setFilmesFilter);

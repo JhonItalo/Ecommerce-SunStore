@@ -60,15 +60,6 @@ export const Item = styled.div`
       p {
         font-size: 1rem;
       }
-      a {
-        position: absolute;
-        bottom: 1rem;
-        left: 50%;
-        transform: translate(-50%, 0);
-        width: 4rem;
-        height: 1rem;
-        font-size: 0.5rem;
-      }
     }
   }
 `;
@@ -85,5 +76,14 @@ export const BannerLink = styled.a`
 
   :hover {
     filter: brightness(0.9);
+  }
+  @media (max-width: 748px) {
+    position: absolute;
+    width: 50%;
+    height: 1.5rem;
+    bottom: 0.5rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-size: 0.7rem;
   }
 `;

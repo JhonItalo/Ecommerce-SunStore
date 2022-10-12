@@ -1,20 +1,22 @@
 import * as S from "./styles";
 import { useRouter } from "next/router";
 import Link from "next/link";
-
 import { MdKeyboardArrowDown } from "react-icons/md";
+interface props {
+  mobile: boolean;
+}
 
-const Nav = () => {
+const Nav = ({ mobile }: props) => {
   console.log("nav render");
   const rotaAtual = useRouter();
-  
+
   const borderActive = (opc: string) => {
     return rotaAtual.pathname === opc ? "active" : "";
   };
   //
 
   return (
-    <S.Nav>
+    <S.Nav mobile={mobile} className="ConteinerNav">
       <ul>
         <S.Li active={borderActive("/")}>
           <Link href="/">

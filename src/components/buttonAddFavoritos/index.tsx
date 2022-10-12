@@ -1,21 +1,19 @@
 import React, { ReactNode, useContext } from "react";
-import { FavoritoContext } from "../../context/FavContext";
-import UseAddFav from "../../hooks/UseAddFav";
 
+import UseAddFav from "../../hooks/UseAddFav";
 
 interface props {
   title: string;
   id: number;
+  poster_path: string;
   children: ReactNode;
 }
 
-const ButtonAddFavoritos = ({ title, id, children }: props) => {
-  const { Attfav, setAttfav } = useContext(FavoritoContext);
-  const { AdiconarFavorito, setAdcionarFavorito } = UseAddFav({ title, id });
+const ButtonAddFavoritos = ({ title, id, poster_path, children }: props) => {
+  const { AdiconarFavorito, setAdcionarFavorito } = UseAddFav({ title, id, poster_path });
 
   const handleClickAddFavoritos = () => {
     setAdcionarFavorito(AdiconarFavorito + 1);
-    setAttfav(Attfav + 1);
   };
 
   return (

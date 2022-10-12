@@ -28,7 +28,7 @@ const ListProdutos = () => {
             height="400px"
             title={item.title}
             id={item.id}
-            path={item.poster_path}
+            poster_path={item.poster_path}
           />
         ))}
       </S.ListProducts>

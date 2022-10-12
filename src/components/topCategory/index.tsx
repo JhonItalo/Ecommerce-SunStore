@@ -10,63 +10,51 @@ const TopCategory = () => {
       <S.Flex>
         <S.Itens>
           <Link href="/shop">
-            <S.Cards>
-              <div>
-                <img src="/assets/topCategory-chair.png" alt="" width="100%" />
+            <S.CardLink>
+              <div className="border">
+                <img src="/assets/topCategory-chair.png" alt="chair" width="100%" />
               </div>
-            </S.Cards>
+            </S.CardLink>
           </Link>
           <span>Chair</span>
         </S.Itens>
         <S.Itens>
           <Link href="/shop">
-            <S.Cards>
+            <S.CardLink>
               <div>
                 <img src="/assets/topCategory-cama.png" alt="" width="100%" />
               </div>
-            </S.Cards>
+            </S.CardLink>
           </Link>
           <span>Bed</span>
         </S.Itens>
         <S.Itens>
           <Link href="/shop">
-            <S.Cards>
+            <S.CardLink>
               <div>
-                <img
-                  src="/assets/topCategory-computer.png"
-                  alt=""
-                  width="100%"
-                />
+                <img src="/assets/topCategory-computer.png" alt="" width="100%" />
               </div>
-            </S.Cards>
+            </S.CardLink>
           </Link>
           <span>Work Desk</span>
         </S.Itens>
         <S.Itens>
           <Link href="/shop">
-            <S.Cards>
+            <S.CardLink>
               <div>
-                <img
-                  src="/assets/topCategory-cadeira.png"
-                  alt=""
-                  width="100%"
-                />
+                <img src="/assets/topCategory-cadeira.png" alt="" width="100%" />
               </div>
-            </S.Cards>
+            </S.CardLink>
           </Link>
           <span>Table</span>
         </S.Itens>
         <S.Itens>
           <Link href="/shop">
-            <S.Cards>
+            <S.CardLink>
               <div>
-                <img
-                  src="/assets/topCategory-sofaset.png"
-                  alt=""
-                  width="100%"
-                />
+                <img src="/assets/topCategory-sofaset.png" alt="" width="100%" />
               </div>
-            </S.Cards>
+            </S.CardLink>
           </Link>
           <span>Sofa-Set</span>
         </S.Itens>

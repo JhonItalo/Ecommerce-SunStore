@@ -34,7 +34,6 @@ export const Itens = styled.div`
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  //border: 1px solid pink;
   span {
     font-size: 1.1rem;
     font-weight: 500;
@@ -44,7 +43,7 @@ export const Itens = styled.div`
   }
 `;
 
-export const Cards = styled.a`
+export const CardLink = styled.a`
   width: 100%;
   height: 150px;
   display: flex;
@@ -59,6 +58,7 @@ export const Cards = styled.a`
     height: 180px;
   }
   div {
+    position: relative;
     width: 94%;
     height: 94%;
     display: flex;

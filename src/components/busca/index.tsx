@@ -4,11 +4,7 @@ import * as S from "./styles";
 import { HiOutlineSearch } from "react-icons/hi";
 import { RequestFilmesSearch } from "../../request/FilmesSearchInput";
 import ItemSearch from "../itemSearch/ItemSearch";
-
-interface FilmesSmall {
-  title: string;
-  id: number;
-}
+import { FilmesSmall } from "../../types";
 
 const Busca = () => {
   console.log("busca render");
@@ -45,6 +41,7 @@ const Busca = () => {
 
   return (
     <S.ConteinerBusca
+      className="ConteinerBusca"
       onScroll={(e) => e.stopPropagation()}
       onClick={handleClickBusca}
       active={activeInputsearch === "on"}

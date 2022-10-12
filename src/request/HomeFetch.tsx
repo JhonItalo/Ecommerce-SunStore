@@ -1,8 +1,4 @@
-interface FilmesShort {
-  title: string;
-  id: number;
-  poster_path: string;
-}
+import { FilmesShort } from "../types/index";
 
 export const requestFilmes = async (api: string) => {
   const filmes: FilmesShort[] = [];

@@ -11,8 +11,6 @@ export const TreandyProducts = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 2rem;
-  background-color: rgba(200, 200, 170, 0.3);
   @media (max-width: 748px) {
     padding: 0;
   }
@@ -26,7 +24,7 @@ export const Opcoes = styled.div`
   gap: 1rem;
   @media (max-width: 748px) {
     width: 100%;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 0 1rem;
   }
 `;
@@ -43,6 +41,8 @@ export const Button = styled.button<propsButton>`
   }
 `;
 export const ListProducts = styled.div`
+  background-color: rgba(200, 200, 170, 0.3);
+  padding: 2rem 1.5rem 1rem;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -50,7 +50,7 @@ export const ListProducts = styled.div`
   overflow: scroll;
   @media (max-width: 748px) {
     flex-wrap: nowrap;
-    gap: 1rem;
+    gap: 2rem;
     .mediaQueryControlParentProduct {
       width: 150px;
       height: 300px;

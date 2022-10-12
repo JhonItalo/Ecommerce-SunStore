@@ -1,25 +1,44 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { FavoritoContext } from "../context/FavContext";
 
 interface props {
   title: string;
   id: number;
+  poster_path: string;
 }
 
-const UseAddFav = ({ title, id }: props) => {
+const UseAddFav = ({ title, id, poster_path }: props) => {
+  const { Attfav, setAttfav } = useContext(FavoritoContext);
   const [AdiconarFavorito, setAdcionarFavorito] = useState<number>(0);
+
+  const removefav = (array: props[], id: number): boolean => {
+    for (let i = 0; i < array.length; i++) {
+      if (array[i].id === id) {
+        array.splice(i, 1);
+        i--;
+        return true;
+      }
+    }
+    return false;
+  };
 
   useEffect(() => {
     if (AdiconarFavorito > 0) {
-      if (typeof localStorage.getItem("favorito") != typeof "string") {
-        localStorage.setItem("favorito", JSON.stringify([{ title: title, id: id }]));
-      } else {
-        const responseString = localStorage.getItem("favorito");
-        const responseArray = JSON.parse(responseString!);
-        responseArray.push({ title: title, id: id });
+      const h = localStorage.getItem("favorito");
+      const responseArray = JSON.parse(h!);
+      if (removefav(responseArray, id)) {
+        console.log("entrou no remove item");
         localStorage.setItem("favorito", JSON.stringify(responseArray));
+        setAttfav(Attfav - 1);
+        return;
+      } else {
+        console.log("entrou no add item item");
+        responseArray.push({ title: title, id: id, poster_path: poster_path });
+        localStorage.setItem("favorito", JSON.stringify(responseArray));
+        setAttfav(Attfav + 1);
       }
     }
-  }, [AdiconarFavorito, title, id]);
+  }, [AdiconarFavorito, title, id, poster_path]);
 
   return { AdiconarFavorito, setAdcionarFavorito };
 };

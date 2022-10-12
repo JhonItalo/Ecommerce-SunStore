@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { MdKeyboardArrowDown } from "react-icons/md";
 interface props {
-  mobile: boolean;
+  mobile?: boolean;
 }
 
 const Nav = ({ mobile }: props) => {

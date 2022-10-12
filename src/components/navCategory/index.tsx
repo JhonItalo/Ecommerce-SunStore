@@ -1,7 +1,6 @@
-import React, { useContext } from "react";
+import React from "react";
 import * as S from "./styles";
 import ItemCategory from "../itemCategory";
-import { ProdutosFilterContex } from "../../context/ProdutosFilterContext";
 
 const NavCategory = () => {
   return (

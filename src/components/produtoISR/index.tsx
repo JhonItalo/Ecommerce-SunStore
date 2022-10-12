@@ -47,7 +47,11 @@ const ProdutoISR = ({ produto }: props) => {
         </S.Producao>
 
         <S.buttons>
-          <ButtonAddFavoritos title={produto.title} id={produto.id}>
+          <ButtonAddFavoritos
+            title={produto.title}
+            id={produto.id}
+            poster_path={produto.poster_path}
+          >
             Add to Favoritos
           </ButtonAddFavoritos>
           <ButtonAddCart title={produto.title} id={produto.id} />

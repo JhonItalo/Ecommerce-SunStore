@@ -30,7 +30,7 @@ export const Buttons = styled.div<props>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: blue;
+
   svg {
     font-size: 1.8rem;
     color: grey;

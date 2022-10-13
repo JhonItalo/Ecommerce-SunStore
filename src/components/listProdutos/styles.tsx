@@ -35,7 +35,7 @@ export const ConteinerListProduts = styled.div`
     margin: 0 auto;
     padding: 0;
     gap: 1rem;
-    background-color: pink;
+
     h3 {
       margin: 0;
       font-size: 2rem;
@@ -60,7 +60,6 @@ export const ListProducts = styled.div`
     padding: 0;
     margin: 0 auto;
     overflow-y: scroll;
-    //background-color: white;
 
     ::-webkit-scrollbar {
       width: 10px;

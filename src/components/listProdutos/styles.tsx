@@ -8,7 +8,7 @@ export const ConteinerListProduts = styled.div`
   flex-direction: column;
   border-top: 1px solid #e6e6e6;
   border-bottom: 1px solid #e6e6e6;
-  h4 {
+  h3 {
     margin-left: 2rem;
     font-size: 1.5rem;
     margin-bottom: 1rem;
@@ -19,12 +19,32 @@ export const ConteinerListProduts = styled.div`
     padding: 0 2rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     span {
       font-weight: bold;
     }
     select {
       padding: 0.2rem 0.1rem;
       display: flex;
+    }
+  }
+  @media (max-width: 748px) {
+    width: 95%;
+    height: 50vh;
+    overflow: scroll;
+    margin: 0 auto;
+    padding: 0;
+    gap: 1rem;
+    background-color: pink;
+    h3 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    .infosAdicionais {
+      padding: 0;
+      span {
+        font-size: 1.2rem;
+      }
     }
   }
 `;
@@ -35,4 +55,21 @@ export const ListProducts = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   overflow-y: auto;
+  @media (max-width: 748px) {
+    height: 50vh;
+    padding: 0;
+    margin: 0 auto;
+    overflow-y: scroll;
+    //background-color: white;
+
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      border: 1px solid grey;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: grey;
+    }
+  }
 `;

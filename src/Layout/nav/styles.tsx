@@ -39,20 +39,26 @@ export const Li = styled.li<propsLi>`
   padding-left: 0.2rem;
   display: flex;
   align-items: center;
+
   border-bottom: ${({ active }) => (active ? "2px solid #BAAA55" : "")};
 
   &:hover {
     color: ${({ theme }) => theme.colors.bege};
   }
   @media (max-width: 748px) {
+    width: 100%;
     height: auto;
     border-bottom: 1px solid black;
-    padding: 1rem;
+
     background: ${({ active, theme }) => (active ? theme.colors.bege : "white")};
+
     color: ${({ active }) => (active ? "white" : "black")}!important;
     a {
+      width: 100%;
+      height: inherit;
+      padding: 1rem;
       display: flex;
-      justify-content: center;
+      justify-content: start;
       align-items: center;
     }
   }

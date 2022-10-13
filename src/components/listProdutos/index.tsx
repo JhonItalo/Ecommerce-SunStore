@@ -7,7 +7,7 @@ const ListProdutos = () => {
   const { FilmesFilter, Atualcategory } = useContext(ProdutosFilterContex);
   return (
     <S.ConteinerListProduts>
-      <h4>{Atualcategory != "" ? Atualcategory : ""}</h4>
+      <h3>{Atualcategory != "" ? Atualcategory : ""}</h3>
       <div className="infosAdicionais">
         <p>
           <span>{FilmesFilter.length}</span> produtos encontrados

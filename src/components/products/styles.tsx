@@ -81,6 +81,15 @@ export const Itens = styled.div<propsItens>`
       else if (type === "l") return `height: 360px;`;
     }};
   }
+  @media (max-width: 748px) {
+    ${({ type }) => {
+      if (type === "l") {
+        return `width: 48%;
+        height: 300px;
+        `;
+      }
+    }}
+  }
 `;
 export const TitleButtonCart = styled.div`
   p {

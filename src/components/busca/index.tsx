@@ -5,8 +5,10 @@ import { HiOutlineSearch } from "react-icons/hi";
 import { RequestFilmesSearch } from "../../request/FilmesSearchInput";
 import ItemSearch from "../itemSearch/ItemSearch";
 import { FilmesSmall } from "../../types";
-
-const Busca = () => {
+interface props {
+  mobile?: boolean;
+}
+const Busca = ({ mobile }: props) => {
   console.log("busca render");
   const resetcomponent = useRouter();
   const [activeInputsearch, setactiveInputsearch] = useState<string>("off");
@@ -31,7 +33,7 @@ const Busca = () => {
   }, [resetcomponent]);
 
   const ChangeInput = (e: React.FormEvent<HTMLInputElement>) => {
-    setSearch(e.currentTarget.value);
+    setSearch(e.currentTarget.value.toLowerCase());
   };
 
   let filterFilmes: FilmesSmall[] = [];
@@ -41,6 +43,7 @@ const Busca = () => {
 
   return (
     <S.ConteinerBusca
+      mobile={mobile}
       className="ConteinerBusca"
       onScroll={(e) => e.stopPropagation()}
       onClick={handleClickBusca}

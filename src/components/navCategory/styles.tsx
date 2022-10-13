@@ -17,6 +17,9 @@ export const Category = styled.ul`
     text-transform: uppercase;
     font-weight: 400;
   }
+  @media (max-width: 748px) {
+    display: none;
+  }
 `;
 export const SubCategory = styled.ul`
   display: flex;

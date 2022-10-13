@@ -7,7 +7,7 @@ export const Header = styled.header`
   background-color: ${({ theme }) => theme.colors.grey};
 
   @media (max-width: 748px) {
-    height: 6vh;
+    height: 8vh;
   }
 `;
 export const Content = styled.div`

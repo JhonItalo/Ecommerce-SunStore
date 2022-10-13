@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 interface props {
   active: boolean;
+  mobile?: boolean;
 }
 
 export const ConteinerBusca = styled.div<props>`
@@ -38,6 +39,7 @@ export const ConteinerBusca = styled.div<props>`
   .listFilmes {
     width: 90%;
     height: 50vh;
+    padding-left: 1rem;
     display: ${({ active }) => (active ? "block" : "none")};
     flex-direction: column;
     justify-content: end;
@@ -47,9 +49,9 @@ export const ConteinerBusca = styled.div<props>`
     overflow-y: auto;
     z-index: 2;
     li {
-      padding: 3px 0;
-      font-size: 1.23 rem;
-      border-left: 1px solid black;
+      padding-left: 0.3rem;
+      font-size: 1.23rem;
+      border-left: 1px solid grey;
       border-bottom: 1px solid black;
       background-color: white;
       :hover {
@@ -70,12 +72,17 @@ export const ConteinerBusca = styled.div<props>`
     }
   }
   @media (max-width: 748px) {
+    display: ${({ mobile }) => (mobile ? "flex" : "none")};
     ${({ active }) => {
       if (active) {
         return ` 
       width: 80%;
       `;
       }
-    }}
+    }};
+  }
+  .listFilmes {
+    top: 105%;
+    left: 0;
   }
 `;

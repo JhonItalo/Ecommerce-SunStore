@@ -6,8 +6,7 @@ interface props {
 export const MenuMobile = styled.div<props>`
   ${({ active }) => {
     if (active) {
-      return `  width: 100%;
-  
+      return `width: 100%;
   display: flex;
   flex-direction: column;
   gap: 0rem;
@@ -26,13 +25,12 @@ export const MenuMobile = styled.div<props>`
 `;
 export const Buttons = styled.div<props>`
   width: 95%;
-  height: 6vh;
+  height: ${({ active }) => (active ? "8vh" : "auto")};
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  // background-color: ${({ theme }) => theme.colors.grey};
-  // background-color: blue;
+  background-color: blue;
   svg {
     font-size: 1.8rem;
     color: grey;

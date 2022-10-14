@@ -24,7 +24,8 @@ export const Content = styled.div`
   padding-top: 1rem;
   @media (max-width: 748px) {
     width: 100%;
-    height: auto;
+    gap: 2rem;
+    align-items: start;
     flex-direction: column;
     //background-color: blue;
   }

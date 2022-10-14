@@ -32,7 +32,7 @@ export const Buttons = styled.div<props>`
   align-items: center;
 
   svg {
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: grey;
   }
   .menu {

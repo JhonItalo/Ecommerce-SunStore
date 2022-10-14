@@ -40,7 +40,7 @@ interface props {
 }
 
 const ProdutosFilterContext = ({ categorys, children }: props) => {
-  console.log(categorys);
+  //console.log(categorys);
   const allfilmes = useMemo(
     () =>
       removeDuplicateFilmes(

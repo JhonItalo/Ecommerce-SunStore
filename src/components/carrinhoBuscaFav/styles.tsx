@@ -11,8 +11,9 @@ export const icons = styled.div`
     font-size: 1.8rem;
   }
   @media (max-width: 748px) {
+    gap: 0.5rem;
     svg {
-      font-size: 1.8rem;
+      font-size: 2rem;
     }
   }
 `;

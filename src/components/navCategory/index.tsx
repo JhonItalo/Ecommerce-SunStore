@@ -10,7 +10,7 @@ const NavCategory = () => {
       <ItemCategory title="Chair">
         <S.SubCategory className="subcategory" onClick={(e) => e.stopPropagation}>
           <li>
-            <label>
+            <label onClick={(e) => e.stopPropagation}>
               Metal:
               <input type="checkbox" name="metal" />
             </label>

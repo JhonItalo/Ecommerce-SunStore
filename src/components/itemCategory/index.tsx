@@ -13,23 +13,24 @@ const ItemCategory = ({ title, children }: props) => {
 
   const [activeSubCategory, setactiveSubCategory] = useState<boolean>(false);
 
-  const handleDisableCategory = (e: React.SyntheticEvent) => {
-    e.stopPropagation();
-    setactiveSubCategory(false);
-  };
   const handleActiveCategory = () => {
-    setactiveSubCategory(true);
     if (Atualcategory === title) {
       setAtualCategory("");
+      setactiveSubCategory(false);
     } else {
       setAtualCategory(title);
+      setactiveSubCategory(true);
     }
   };
   return (
-    <S.CategoryLi active={activeSubCategory} onClick={handleActiveCategory}>
-      <S.Topic>
+    <S.CategoryLi active={activeSubCategory}>
+      <S.Topic onClick={handleActiveCategory}>
         <p>{title}</p>
-        {activeSubCategory ? <CgMathMinus onClick={handleDisableCategory} /> : <CgMathPlus />}
+        {activeSubCategory ? (
+          <CgMathMinus onClick={handleActiveCategory} />
+        ) : (
+          <CgMathPlus onClick={handleActiveCategory} />
+        )}
       </S.Topic>
       {children}
     </S.CategoryLi>

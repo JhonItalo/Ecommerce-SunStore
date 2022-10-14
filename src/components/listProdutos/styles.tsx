@@ -30,12 +30,12 @@ export const ConteinerListProduts = styled.div`
   }
   @media (max-width: 748px) {
     width: 95%;
-    height: 50vh;
+    height: 60vh;
     overflow: scroll;
     margin: 0 auto;
     padding: 0;
     gap: 1rem;
-
+    //background-color: pink;
     h3 {
       margin: 0;
       font-size: 2rem;
@@ -57,12 +57,13 @@ export const ListProducts = styled.div`
   overflow-y: auto;
   @media (max-width: 748px) {
     height: 50vh;
-    padding: 0;
+    padding: 1rem;
     margin: 0 auto;
     overflow-y: scroll;
+    background-color: #e6e6e6;
 
     ::-webkit-scrollbar {
-      width: 10px;
+      width: 5px;
     }
     ::-webkit-scrollbar-track {
       border: 1px solid grey;

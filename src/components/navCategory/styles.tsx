@@ -18,20 +18,29 @@ export const Category = styled.ul`
     font-weight: 400;
   }
   @media (max-width: 748px) {
-    display: none;
+    width: 100%;
+    background-color: white;
+    .fp,
+    .filtros {
+      padding-left: 1rem;
+    }
   }
 `;
 export const SubCategory = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
-
+  position: relative;
   label {
     display: flex;
     justify-content: space-between;
 
     input {
       width: 1.5rem;
+      background-color: inherit;
     }
+  }
+  @media (max-width: 748px) {
+    padding-left: 1rem;
   }
 `;

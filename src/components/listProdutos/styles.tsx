@@ -34,7 +34,8 @@ export const ConteinerListProduts = styled.div`
     overflow: scroll;
     margin: 0 auto;
     padding: 0;
-    gap: 1rem;
+    gap: 0.5rem;
+    border: none;
     //background-color: pink;
     h3 {
       margin: 0;
@@ -66,10 +67,10 @@ export const ListProducts = styled.div`
       width: 5px;
     }
     ::-webkit-scrollbar-track {
-      border: 1px solid grey;
+      border: 1px solid black;
     }
     ::-webkit-scrollbar-thumb {
-      background-color: grey;
+      background-color: white;
     }
   }
 `;

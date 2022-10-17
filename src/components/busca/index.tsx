@@ -1,9 +1,9 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import { useRouter } from "next/router";
 import * as S from "./styles";
 import { HiOutlineSearch } from "react-icons/hi";
-import { RequestFilmesSearch } from "../../request/FilmesSearchInput";
 import ItemSearch from "../itemSearch/ItemSearch";
+import { RequestFilmesSearch } from "../../request/FilmesSearchInput";
 import { FilmesSmall } from "../../types";
 interface props {
   mobile?: boolean;
@@ -11,24 +11,24 @@ interface props {
 const Busca = ({ mobile }: props) => {
   console.log("busca render");
   const resetcomponent = useRouter();
-  const [activeInputsearch, setactiveInputsearch] = useState<string>("off");
-  const [filmes, setfilmes] = useState<any | null>(null);
+  const [activeInputSearch, setActiveInputSearch] = useState<string>("off");
+  const [filmes, setFilmes] = useState<FilmesSmall[]>([]);
   const [search, setSearch] = useState<string>("");
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const handleClickBusca = async () => {
-    setactiveInputsearch("on");
-    RequestFilmesSearch(filmes, setfilmes);
-  };
+  const handleClickBusca = useCallback(() => {
+    RequestFilmesSearch(filmes, setFilmes);
+    setActiveInputSearch("on");
+  }, [filmes]);
 
   useEffect(() => {
-    if (activeInputsearch === "on") {
+    if (activeInputSearch === "on") {
       inputRef.current!.focus();
     }
-  }, [activeInputsearch, filmes]);
+  }, [activeInputSearch, filmes]);
 
   useEffect(() => {
-    setactiveInputsearch("off");
+    setActiveInputSearch("off");
     setSearch("");
   }, [resetcomponent]);
 
@@ -38,7 +38,7 @@ const Busca = ({ mobile }: props) => {
 
   let filterFilmes: FilmesSmall[] = [];
   if (search.length > 0 && filmes != null) {
-    filterFilmes = filmes.filter((filmes: any) => filmes.title.toLowerCase().includes(search));
+    filterFilmes = filmes.filter((filmes: FilmesSmall) => filmes.title.toLowerCase().includes(search));
   }
 
   return (
@@ -47,8 +47,8 @@ const Busca = ({ mobile }: props) => {
       className="ConteinerBusca"
       onScroll={(e) => e.stopPropagation()}
       onClick={handleClickBusca}
-      active={activeInputsearch === "on"}
-      onDoubleClick={() => setactiveInputsearch("off")}
+      active={activeInputSearch === "on"}
+      onDoubleClick={() => setActiveInputSearch("off")}
     >
       <input ref={inputRef} onChange={ChangeInput} value={search} type="text" maxLength={35} />
       <HiOutlineSearch />

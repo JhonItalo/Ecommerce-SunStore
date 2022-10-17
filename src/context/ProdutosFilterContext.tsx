@@ -1,5 +1,6 @@
 import React, { createContext, useState, useEffect, useMemo, useCallback } from "react";
 import { FilmesMedian } from "../types";
+import { removeDuplicateFilmesMedian } from "../utils/Fuctions";
 
 interface propsContext {
   FilmesFilter: FilmesMedian[];
@@ -15,17 +16,6 @@ const defaultValueContext = {
 };
 export const ProdutosFilterContex = createContext<propsContext>(defaultValueContext);
 
-export const removeDuplicateFilmes = (array: FilmesMedian[]) => {
-  for (let h = 0; h < array.length; h++) {
-    for (let l = h + 1; l < array.length; l++) {
-      if (array[h].title === array[l].title) {
-        array.splice(l, 1);
-        l = l - 1;
-      }
-    }
-  }
-  return array;
-};
 console.log("context produto");
 
 interface props {
@@ -39,52 +29,43 @@ interface props {
   children: React.ReactNode;
 }
 
-const ProdutosFilterContext = ({ categorys, children }: props) => {
-  //console.log(categorys);
-  const allfilmes = useMemo(
-    () =>
-      removeDuplicateFilmes(
-        categorys.chair.concat(
-          categorys.bed,
-          categorys.workDesk,
-          categorys.table,
-          categorys.sofaSet
-        )
-      ),
-    [categorys]
-  );
+const FilmesContext = ({ categorys, children }: props) => {
+  const allFilmes: FilmesMedian[] = useMemo(() => {
+    const median = categorys.chair.concat(categorys.bed, categorys.workDesk, categorys.table, categorys.sofaSet);
+    return removeDuplicateFilmesMedian(median);
+  }, [categorys]);
 
-  const VerifyCategory = useCallback(
-    (s: string, set: React.Dispatch<React.SetStateAction<FilmesMedian[]>>) => {
-      switch (s) {
+  const verifyCategory = useCallback(
+    (categoria: string, setFilterFilmes: React.Dispatch<React.SetStateAction<FilmesMedian[]>>) => {
+      switch (categoria) {
         case "Chair":
-          set(categorys.chair);
+          setFilterFilmes(categorys.chair);
           break;
         case "Bed":
-          set(categorys.bed);
+          setFilterFilmes(categorys.bed);
           break;
         case "Work Desk":
-          set(categorys.workDesk);
+          setFilterFilmes(categorys.workDesk);
           break;
         case "Table":
-          set(categorys.table);
+          setFilterFilmes(categorys.table);
           break;
         case "Sofa-set":
-          set(categorys.sofaSet);
+          setFilterFilmes(categorys.sofaSet);
           break;
         case "":
-          set(allfilmes);
+          setFilterFilmes(allFilmes);
           break;
       }
     },
-    [categorys, allfilmes]
+    [categorys, allFilmes]
   );
   const [Atualcategory, setAtualCategory] = useState<string>("");
-  const [FilmesFilter, setFilmesFilter] = useState<FilmesMedian[]>(allfilmes);
+  const [FilmesFilter, setFilmesFilter] = useState<FilmesMedian[]>(allFilmes);
 
   useEffect(() => {
-    VerifyCategory(Atualcategory, setFilmesFilter);
-  }, [Atualcategory, categorys, VerifyCategory]);
+    verifyCategory(Atualcategory, setFilmesFilter);
+  }, [Atualcategory, categorys, verifyCategory]);
 
   return (
     <ProdutosFilterContex.Provider value={{ FilmesFilter, Atualcategory, setAtualCategory }}>
@@ -93,4 +74,4 @@ const ProdutosFilterContext = ({ categorys, children }: props) => {
   );
 };
 
-export default ProdutosFilterContext;
+export default FilmesContext;

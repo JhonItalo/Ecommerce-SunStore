@@ -1,17 +1,13 @@
 import Head from "next/head";
+import { GetStaticProps } from "next";
 import Banner from "../components/banner";
 import BannerSecond from "../components/bannerSecond/indes";
-import { GetStaticProps } from "next";
 import Sections from "../components/sections";
 import TopCategory from "../components/topCategory";
 import TreandyProducts from "../components/treandyProducts";
 import { filmes } from "../request/HomeFetch";
+import { FilmesShort } from "../types";
 
-interface FilmesShort {
-  title: string;
-  id: number;
-  poster_path: string;
-}
 interface props {
   newP: FilmesShort[];
   feature: FilmesShort[];
@@ -37,12 +33,12 @@ export default function Home({ newP, feature, best }: props) {
   );
 }
 export const getStaticProps: GetStaticProps = async () => {
-  const data: props = await filmes();
+  const { newP, feature, best } = await filmes();
   return {
     props: {
-      newP: data.newP,
-      feature: data.feature,
-      best: data.best,
+      newP: newP,
+      feature: feature,
+      best: best,
     },
   };
 };

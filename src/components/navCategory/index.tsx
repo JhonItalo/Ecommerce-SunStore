@@ -8,9 +8,9 @@ const NavCategory = () => {
       <p className="fp">filtrado por:</p>
       <p className="filtros">Filtros</p>
       <ItemCategory title="Chair">
-        <S.SubCategory className="subcategory" onClick={(e) => e.stopPropagation}>
+        <S.SubCategory className="subcategory">
           <li>
-            <label onClick={(e) => e.stopPropagation}>
+            <label>
               Metal:
               <input type="checkbox" name="metal" />
             </label>

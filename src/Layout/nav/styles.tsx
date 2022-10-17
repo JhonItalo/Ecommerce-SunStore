@@ -39,7 +39,6 @@ export const Li = styled.li<propsLi>`
   padding-left: 0.2rem;
   display: flex;
   align-items: center;
-
   border-bottom: ${({ active }) => (active ? "2px solid #BAAA55" : "")};
 
   &:hover {

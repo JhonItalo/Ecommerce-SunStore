@@ -9,8 +9,8 @@ export interface FilmesShort {
   poster_path: string;
 }
 export interface FilmesMedian {
-  title: string[];
-  id: number[];
-  poster_path: string[];
-  vote_average: number[];
+  title: string;
+  id: number;
+  poster_path: string;
+  vote_average: number;
 }

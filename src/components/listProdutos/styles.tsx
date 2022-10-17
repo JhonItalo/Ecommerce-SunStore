@@ -33,7 +33,7 @@ export const ConteinerListProduts = styled.div`
     height: 60vh;
     overflow: scroll;
     margin: 0 auto;
-    padding: 0;
+    //padding: 2rem 0;
     gap: 0.5rem;
     border: none;
     //background-color: pink;

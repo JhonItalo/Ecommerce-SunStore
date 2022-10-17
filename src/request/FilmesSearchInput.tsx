@@ -1,10 +1,9 @@
-interface response {
-  title: string[];
-  id: number[];
-}
+import { FilmesSmall } from "../types/";
+import { removeDuplicateFilmesSmall } from "../utils/Fuctions";
+
 const request = async (url: string) => {
-  let item: response;
-  const itemRequestFilmes: response[] = [];
+  let item: FilmesSmall;
+  const itemRequestFilmes: FilmesSmall[] = [];
   const req = await fetch(url);
   const response = await req.json();
   for (let i = 0; i < response.results.length; i++) {
@@ -37,35 +36,16 @@ export const concatAllItensFilmes = async () => {
   const newPage = await request(
     "https://api.themoviedb.org/3/movie/upcoming?api_key=617375c16cb7cbacc59f9c2b6102e4e4&language=pt-BR&page=1"
   );
-  const allFilmes: response[] = popularPage1.concat(
-    popularPage2,
-    popularPage3,
-    bestPage1,
-    bestPage2,
-    bestPage3,
-    newPage
-  );
-  for (let h = 0; h < allFilmes.length; h++) {
-    for (let l = h + 1; l < allFilmes.length; l++) {
-      if (allFilmes[h].title === allFilmes[l].title) {
-        allFilmes.splice(l, 1);
-        l = l - 1;
-      }
-    }
-  }
+  const small: FilmesSmall[] = popularPage1.concat(popularPage2, popularPage3, bestPage1, bestPage2, bestPage3, newPage);
+  const allFilmes = removeDuplicateFilmesSmall({ small });
   return allFilmes;
 };
 
-export const RequestFilmesSearch = async (
-  filmes: any,
-  setfilmes: (filmes: any) => void
-) => {
-  if (filmes != null) {
+export const RequestFilmesSearch = async (filmes: FilmesSmall[], setfilmes: (filmes: FilmesSmall[]) => void) => {
+  if (filmes.length > 0) {
     return;
   }
   const result = await concatAllItensFilmes();
-
   setfilmes(result);
   return;
 };
-

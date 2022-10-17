@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import * as S from "./styles";
 import { BiMenu } from "react-icons/bi";
 import Busca from "../busca";
 import Nav from "../../Layout/nav";
-import { useRouter } from "next/router";
 
 const MenuMobile = () => {
   const rotaAtual = useRouter();

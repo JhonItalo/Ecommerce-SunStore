@@ -1,9 +1,9 @@
 import ShopNow from "../components/shopNow";
 import { GetServerSideProps } from "next";
 import { FetchFilmesCategory } from "../request/ShopFetch";
-import ProdutosFilterContext from "../context/ProdutosFilterContext";
 import { FilmesMedian } from "../types/";
 import Head from "next/head";
+import FilmesContext from "../context/ProdutosFilterContext";
 
 interface props {
   chair: FilmesMedian[];
@@ -25,9 +25,9 @@ export default function shop({ chair, bed, workDesk, table, sofaSet }: props) {
         />
       </Head>
       <main>
-        <ProdutosFilterContext categorys={{ chair, bed, workDesk, table, sofaSet }}>
+        <FilmesContext categorys={{ chair, bed, workDesk, table, sofaSet }}>
           <ShopNow />
-        </ProdutosFilterContext>
+        </FilmesContext>
       </main>
     </>
   );

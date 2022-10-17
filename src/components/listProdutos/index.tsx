@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import * as S from "./styles";
 import Products from "../products";
 import { ProdutosFilterContex } from "../../context/ProdutosFilterContext";
+import { FilmesMedian } from "../../types";
 
 const ListProdutos = () => {
   const { FilmesFilter, Atualcategory } = useContext(ProdutosFilterContex);
@@ -10,7 +11,8 @@ const ListProdutos = () => {
       <h3>{Atualcategory != "" ? Atualcategory : ""}</h3>
       <div className="infosAdicionais">
         <p>
-          <span>{FilmesFilter.length}</span> produtos encontrados
+          <span>{FilmesFilter.length}</span>
+          produtos encontrados
         </p>
         <select defaultValue="relevãncia">
           <option value="relevância">relevância</option>
@@ -20,7 +22,7 @@ const ListProdutos = () => {
         </select>
       </div>
       <S.ListProducts>
-        {FilmesFilter.map((item: any) => (
+        {FilmesFilter.map((item: FilmesMedian) => (
           <Products
             key={item.id}
             type="l"

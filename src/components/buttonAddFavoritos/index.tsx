@@ -1,4 +1,4 @@
-import React, { ReactNode, useContext } from "react";
+import React, { ReactNode} from "react";
 
 import UseAddFav from "../../hooks/UseAddFav";
 
@@ -6,7 +6,7 @@ interface props {
   title: string;
   id: number;
   poster_path: string;
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 const ButtonAddFavoritos = ({ title, id, poster_path, children }: props) => {

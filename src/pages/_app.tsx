@@ -6,7 +6,7 @@ import themes from "../../styles/themes";
 import Footer from "../Layout/footer";
 import Header from "../Layout/header";
 import Nav from "../Layout/nav";
-import CarrinhoContext from "../context/CarrinhoContext";
+import CarrinhoContext from "../context/CartCountContext";
 import FavContext from "../context/FavContext";
 
 export default function MyApp({ Component, pageProps }: AppProps) {

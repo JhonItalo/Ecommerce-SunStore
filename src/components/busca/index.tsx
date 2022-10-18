@@ -15,10 +15,12 @@ const Busca = ({ mobile }: props) => {
   const [filmes, setFilmes] = useState<FilmesSmall[]>([]);
   const [search, setSearch] = useState<string>("");
   const inputRef = useRef<HTMLInputElement>(null);
+  let filterFilmes: FilmesSmall[] = [];
 
   const handleClickBusca = useCallback(() => {
-    RequestFilmesSearch(filmes, setFilmes);
     setActiveInputSearch("on");
+    RequestFilmesSearch(filmes, setFilmes);
+    console.log("request");
   }, [filmes]);
 
   useEffect(() => {
@@ -36,8 +38,7 @@ const Busca = ({ mobile }: props) => {
     setSearch(e.currentTarget.value.toLowerCase());
   };
 
-  let filterFilmes: FilmesSmall[] = [];
-  if (search.length > 0 && filmes != null) {
+  if (search.length > 0 && filmes.length > 0) {
     filterFilmes = filmes.filter((filmes: FilmesSmall) => filmes.title.toLowerCase().includes(search));
   }
 

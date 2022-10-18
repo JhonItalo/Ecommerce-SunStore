@@ -2,16 +2,16 @@ import { createContext, useEffect, useState } from "react";
 import React from "react";
 
 interface context {
-  Attfav: number;
-  setAttfav: React.Dispatch<React.SetStateAction<number>>;
+  CountItemFav: number;
+  setCountItemFav: React.Dispatch<React.SetStateAction<number>>;
 }
 const defaultValue = {
-  Attfav: 0,
-  setAttfav: () => {
+  CountItemFav: 0,
+  setCountItemFav: () => {
     //nothing
   },
 };
-export const FavoritoContext = createContext<context>(defaultValue);
+export const CountFavoritoContext = createContext<context>(defaultValue);
 
 interface props {
   children: React.ReactNode;
@@ -19,23 +19,21 @@ interface props {
 const FavContext = ({ children }: props) => {
   console.log("contexto renderizou fav");
 
-  const [Attfav, setAttfav] = useState<number>(0);
+  const [CountItemFav, setCountItemFav] = useState<number>(0);
 
   useEffect(() => {
-    if (typeof localStorage.getItem("favorito") != typeof "string") {
+    const localStorageString = localStorage.getItem("favorito");
+    if (typeof localStorageString != typeof "string") {
       localStorage.setItem("favorito", "[]");
     } else {
-      const responseString = localStorage.getItem("favorito");
-      const responseArray = JSON.parse(responseString!);
-      setAttfav(responseArray.length);
+      const localStorageArray = JSON.parse(localStorageString!);
+      setCountItemFav(localStorageArray.length);
     }
-  }, []);
+  }, [CountItemFav]);
 
-  console.log(Attfav, "contexto");
+  console.log(CountItemFav, "contexto");
 
-  return (
-    <FavoritoContext.Provider value={{ Attfav, setAttfav }}>{children}</FavoritoContext.Provider>
-  );
+  return <CountFavoritoContext.Provider value={{ CountItemFav, setCountItemFav }}>{children}</CountFavoritoContext.Provider>;
 };
 
 export default FavContext;

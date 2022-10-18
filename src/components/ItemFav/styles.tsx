@@ -6,6 +6,7 @@ export const Item = styled.li`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 2rem;
   border: 1px solid black;
   background-color: white;
   padding: 1rem;
@@ -30,6 +31,7 @@ export const Buttons = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+  //background-color: blue;
   button {
     background-color: white;
     border: 1px solid grey;
@@ -39,6 +41,15 @@ export const Buttons = styled.div`
     width: 100%;
     padding: 0.5rem;
     border-radius: 20px;
+  }
+  .removeFav {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 20px;
+  }
+  button:hover {
+    background-color: ${({ theme }) => theme.colors.bege};
+    color: white;
   }
 `;
 export const BtnMoreExcluir = styled.div`

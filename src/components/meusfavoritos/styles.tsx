@@ -8,8 +8,8 @@ export const Main = styled.main`
   gap: 2rem;
   background-color: #e6e6e6;
 `;
-export const T = styled.ul`
+export const ListFav = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem;
 `;

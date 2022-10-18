@@ -4,6 +4,7 @@ import Link from "next/link";
 import { TiArrowSortedDown } from "react-icons/ti";
 import { FilmesShort } from "../../types";
 import ButtonAddCart from "../buttonAddCart";
+import ButtonRemoveFav from "../ButtonRemoveFav.tsx";
 
 interface props {
   filme: FilmesShort;
@@ -19,11 +20,14 @@ const ItemFav = ({ filme }: props) => {
             <img src={`https://image.tmdb.org/t/p/w300${filme.poster_path}`} alt="" />
           </a>
         </Link>
-        <p>{filme.title}</p>
-        <span>id: {filme.id}</span>
+        <div>
+          <p>{filme.title}</p>
+          <span>ID: {filme.id}</span>
+        </div>
       </S.conteinerInfoFilme>
       <S.Buttons>
         <ButtonAddCart title={filme.title} id={filme.id} />
+        <ButtonRemoveFav id={filme.id} />
         <S.BtnMoreExcluir>
           <button>
             Mais <TiArrowSortedDown />

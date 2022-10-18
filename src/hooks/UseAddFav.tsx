@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext } from "react";
-import { FavoritoContext } from "../context/FavContext";
+import { CountFavoritoContext } from "../context/FavContext";
 
 interface props {
   title: string;
@@ -8,7 +8,7 @@ interface props {
 }
 
 const UseAddFav = ({ title, id, poster_path }: props) => {
-  const { Attfav, setAttfav } = useContext(FavoritoContext);
+  const { CountItemFav, setCountItemFav } = useContext(CountFavoritoContext);
   const [AdiconarFavorito, setAdcionarFavorito] = useState<number>(0);
 
   const removefav = (array: props[], id: number): boolean => {
@@ -24,18 +24,18 @@ const UseAddFav = ({ title, id, poster_path }: props) => {
 
   useEffect(() => {
     if (AdiconarFavorito > 0) {
-      const h = localStorage.getItem("favorito");
-      const responseArray = JSON.parse(h!);
+      const localStorageString = localStorage.getItem("favorito");
+      const responseArray = JSON.parse(localStorageString!);
       if (removefav(responseArray, id)) {
         console.log("entrou no remove item");
         localStorage.setItem("favorito", JSON.stringify(responseArray));
-        setAttfav(Attfav - 1);
+        setCountItemFav(CountItemFav - 1);
         return;
       } else {
         console.log("entrou no add item item");
         responseArray.push({ title: title, id: id, poster_path: poster_path });
         localStorage.setItem("favorito", JSON.stringify(responseArray));
-        setAttfav(Attfav + 1);
+        setCountItemFav(CountItemFav + 1);
       }
     }
   }, [AdiconarFavorito, title, id, poster_path]);

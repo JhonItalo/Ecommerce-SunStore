@@ -10,13 +10,13 @@ const UseAddCart = ({ title, id }: props) => {
 
   useEffect(() => {
     if (AdiconarCarrinho > 0) {
-      if (typeof localStorage.getItem("carrinho") != typeof "string") {
+      const localStorageString = localStorage.getItem("carrinho");
+      if (typeof localStorageString != typeof "string") {
         localStorage.setItem("carrinho", JSON.stringify([{ title: title, id: id }]));
       } else {
-        const responseString = localStorage.getItem("carrinho");
-        const responseArray = JSON.parse(responseString!);
-        responseArray.push({ title: title, id: id });
-        localStorage.setItem("carrinho", JSON.stringify(responseArray));
+        const localStorageArray = JSON.parse(localStorageString!);
+        localStorageArray.push({ title: title, id: id });
+        localStorage.setItem("carrinho", JSON.stringify(localStorageArray));
       }
     }
   }, [AdiconarCarrinho, title, id]);

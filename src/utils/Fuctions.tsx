@@ -26,3 +26,17 @@ export const removeDuplicateFilmesMedian = (median: FilmesMedian[]) => {
   }
   return median;
 };
+/*export const removeDuplicateFilmesShort = (short: FilmesShort[]) => {
+  if (short.length > 0) {
+    for (let h = 0; h < short.length; h++) {
+      for (let l = h + 1; l < short.length; l++) {
+        if (short[h].title === short[l].title) {
+          short.splice(l, 1);
+          l = l - 1;
+        }
+      }
+    }
+  }
+  return short;
+};
+*/

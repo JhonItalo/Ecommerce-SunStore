@@ -1,33 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import * as S from "./styles";
 import { FilmesShort } from "../../types";
 import ItemFav from "../ItemFav";
 import ReloadContext from "../../context/ReloadLocalStorageContext";
+import UseFavorito from "../../hooks/UseFavorito";
 
 const MeusFavortios = () => {
-  const [favoritos, setFavoritos] = useState<FilmesShort[]>([]);
-  const [reload, setReload] = useState<number>(0);
-
-  console.log(favoritos, "fav");
-
-  useEffect(() => {
-    const localStorageString = localStorage.getItem("favorito");
-    if (typeof localStorageString === typeof "string") {
-      const localStorageArray = JSON.parse(localStorageString!);
-      setFavoritos(localStorageArray);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (reload > 0) {
-      const localStorageString = localStorage.getItem("favorito");
-      if (typeof localStorageString === typeof "string") {
-        const localStorageArray = JSON.parse(localStorageString!);
-        setFavoritos(localStorageArray);
-      }
-    }
-  }, [reload]);
-
+  const { favoritos, reload, setReload } = UseFavorito();
   return (
     <ReloadContext Reload={reload} setReload={setReload}>
       <S.Main>

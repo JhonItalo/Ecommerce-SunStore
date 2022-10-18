@@ -27,12 +27,11 @@ const ItemFav = ({ filme }: props) => {
       </S.conteinerInfoFilme>
       <S.Buttons>
         <ButtonAddCart title={filme.title} id={filme.id} />
-        <ButtonRemoveFav id={filme.id} />
         <S.BtnMoreExcluir>
+          <ButtonRemoveFav id={filme.id}>Excluir</ButtonRemoveFav>
           <button>
             Mais <TiArrowSortedDown />
           </button>
-          <button>Excluir</button>
         </S.BtnMoreExcluir>
       </S.Buttons>
     </S.Item>

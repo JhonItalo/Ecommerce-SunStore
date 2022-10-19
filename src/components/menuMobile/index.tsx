@@ -8,13 +8,15 @@ import Nav from "../../Layout/nav";
 const MenuMobile = () => {
   const rotaAtual = useRouter();
   const [activeModal, setActiveModal] = useState<boolean>(false);
+
+  useEffect(() => {
+    setActiveModal(false);
+  }, [rotaAtual]);
+
   const handleMenu = (e: React.FormEvent<HTMLButtonElement>) => {
     setActiveModal(!activeModal);
     e.stopPropagation();
   };
-  useEffect(() => {
-    setActiveModal(false);
-  }, [rotaAtual]);
 
   return (
     <S.MenuMobile active={activeModal}>

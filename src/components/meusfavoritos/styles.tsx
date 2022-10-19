@@ -9,7 +9,6 @@ export const Main = styled.main`
   flex-direction: column;
   gap: 2rem;
   background-color: rgba(200, 200, 170, 0.3);
-  //background-color: #e6e6e6;
   @media (max-width: 748px) {
     width: 100%;
   }
@@ -20,6 +19,5 @@ export const ListFav = styled.ul`
   gap: 2rem;
   @media (max-width: 748px) {
     width: 100%;
-    // background-color: red;
   }
 `;

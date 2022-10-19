@@ -20,7 +20,6 @@ const Busca = ({ mobile }: props) => {
   const handleClickBusca = useCallback(() => {
     setActiveInputSearch("on");
     RequestFilmesSearch(filmes, setFilmes);
-    console.log("request");
   }, [filmes]);
 
   useEffect(() => {

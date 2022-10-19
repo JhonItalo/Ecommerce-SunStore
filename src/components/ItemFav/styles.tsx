@@ -12,7 +12,7 @@ export const Item = styled.li`
   padding: 1rem;
   @media (max-width: 748px) {
     width: 100%;
-    //background-color: blue;
+    background-color: blue;
     flex-direction: column;
   }
 `;
@@ -34,6 +34,10 @@ export const conteinerInfoFilme = styled.div`
   @media (max-width: 748px) {
     flex-direction: column;
     align-items: center;
+    img {
+      width: 250px;
+      height: 350px;
+    }
     div {
       display: flex;
       flex-direction: column;

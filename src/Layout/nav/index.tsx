@@ -13,7 +13,6 @@ const Nav = ({ mobile }: props) => {
   const borderActive = (opc: string) => {
     return rotaAtual.pathname === opc ? "active" : "";
   };
-  //
 
   return (
     <S.Nav mobile={mobile} className="ConteinerNav">

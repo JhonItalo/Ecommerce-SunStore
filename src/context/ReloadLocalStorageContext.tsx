@@ -1,18 +1,18 @@
-import React, { useEffect, useState, createContext } from "react";
+import React, { createContext } from "react";
 
 interface propsContext {
-  ReloadLocalStorage: number;
-  setReloadLocalStorage: React.Dispatch<React.SetStateAction<number>>;
+  ReloadLocalStorage: boolean;
+  setReloadLocalStorage: React.Dispatch<React.SetStateAction<boolean>>;
 }
 export const ReloadLocalStorageContext = createContext<propsContext>({
-  ReloadLocalStorage: 0,
+  ReloadLocalStorage: false,
   setReloadLocalStorage: () => {
     /*nothing*/
   },
 });
 interface props {
-  Reload: number;
-  setReload: React.Dispatch<React.SetStateAction<number>>;
+  Reload: boolean;
+  setReload: React.Dispatch<React.SetStateAction<boolean>>;
   children: React.ReactNode;
 }
 const ReloadContext = ({ children, Reload, setReload }: props) => {

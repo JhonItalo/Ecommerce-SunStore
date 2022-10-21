@@ -14,3 +14,10 @@ export interface FilmesMedian {
   poster_path: string;
   vote_average: number;
 }
+
+export interface ItemCartProps {
+  title: string;
+  id: number;
+  poster_path: string;
+  countItem: number;
+}

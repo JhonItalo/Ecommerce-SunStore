@@ -1,20 +1,18 @@
 import { useState, useEffect } from "react";
-import { FilmesShort } from "../types";
+import { ItemCartProps } from "../types";
 
 const UseFavorito = () => {
-  const [favoritos, setFavoritos] = useState<FilmesShort[]>([]);
+  const [carrinho, setCarrinho] = useState<ItemCartProps[]>([]);
   const [reload, setReload] = useState<boolean>(false);
 
-  console.log(favoritos, "fav");
-
   useEffect(() => {
-    const localStorageString = localStorage.getItem("favorito");
+    const localStorageString = localStorage.getItem("carrinho");
     if (typeof localStorageString === typeof "string") {
       const localStorageArray = JSON.parse(localStorageString!);
-      setFavoritos(localStorageArray);
+      setCarrinho(localStorageArray);
     }
   }, [reload]);
-  return { favoritos, reload, setReload };
+  return { carrinho, reload, setReload };
 };
 
 export default UseFavorito;

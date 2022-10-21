@@ -39,7 +39,7 @@ const Products = ({ title, poster_path, id, width, height, type }: props) => {
 
       <S.TitleButtonCart>
         <p>{title}</p>
-        <ButtonAddCart title={title} id={id} />
+        <ButtonAddCart title={title} id={id} poster_path={poster_path} />
       </S.TitleButtonCart>
     </S.Itens>
   );

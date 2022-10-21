@@ -9,72 +9,43 @@ interface props {
   feature: FilmesShort[];
   best: FilmesShort[];
 }
+const renderCategory = (category: string, { newP, feature, best }: props) => {
+  if (category === "new") {
+    return opcaoAtual(newP);
+  } else if (category === "feature") {
+    return opcaoAtual(feature);
+  } else if (category === "best") {
+    return opcaoAtual(best);
+  } else {
+    return;
+  }
+};
+const opcaoAtual = (array: FilmesShort[]) => {
+  return array.map((item: FilmesShort) => (
+    <Products type="s" width="22%" height="380px" key={item.id} title={item.title} poster_path={item.poster_path} id={item.id} />
+  ));
+};
+
 const TreandyProducts = ({ newP, feature, best }: props) => {
   console.log("trendly render");
-  const [opcListaProdutos, setopcListaProdutos] = useState<string>("new");
+  const [category, setCategory] = useState<string>("new");
   return (
     <>
       <S.TreandyProducts>
         <TitleSection title="Lastest Items" subtitle="Treandy Products" />
-
         <S.Opcoes>
-          <S.Button onClick={() => setopcListaProdutos("new")} active={opcListaProdutos === "new"}>
+          <S.Button onClick={() => setCategory("new")} active={category === "new"}>
             New Products
           </S.Button>
-          <S.Button
-            onClick={() => setopcListaProdutos("feature")}
-            active={opcListaProdutos === "feature"}
-          >
+          <S.Button onClick={() => setCategory("feature")} active={category === "feature"}>
             Feature Products
           </S.Button>
-          <S.Button
-            onClick={() => setopcListaProdutos("best")}
-            active={opcListaProdutos === "best"}
-          >
+          <S.Button onClick={() => setCategory("best")} active={category === "best"}>
             Best Seller
           </S.Button>
         </S.Opcoes>
 
-        <S.ListProducts>
-          {opcListaProdutos === "new" &&
-            newP.map((items) => (
-              <Products
-                type="s"
-                width="22%"
-                height="380px"
-                key={items.id}
-                title={items.title}
-                poster_path={items.poster_path}
-                id={items.id}
-              />
-            ))}
-
-          {opcListaProdutos === "feature" &&
-            feature.map((items) => (
-              <Products
-                type="s"
-                width="22%"
-                height="380px"
-                key={items.id}
-                title={items.title}
-                poster_path={items.poster_path}
-                id={items.id}
-              />
-            ))}
-
-          {opcListaProdutos === "best" &&
-            best.map((items) => (
-              <Products
-                type="s"
-                width="22%"
-                height="380px"
-                key={items.id}
-                title={items.title}
-                poster_path={items.poster_path}
-                id={items.id}
-              />
-            ))}
-        </S.ListProducts>
+        <S.ListProducts>{renderCategory(category, { newP, feature, best })}</S.ListProducts>
       </S.TreandyProducts>
     </>
   );

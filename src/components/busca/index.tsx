@@ -5,17 +5,17 @@ import { HiOutlineSearch } from "react-icons/hi";
 import ItemSearch from "../itemSearch/ItemSearch";
 import { RequestFilmesSearch } from "../../request/FilmesSearchInput";
 import { FilmesSmall } from "../../types";
+import UseFilterFilmes from "../../hooks/UseFilterFilmes";
 interface props {
   mobile?: boolean;
 }
 const Busca = ({ mobile }: props) => {
   console.log("busca render");
+  const [filmes, setFilmes] = useState<FilmesSmall[]>([]);
+  const { search, setSearch, filterFilmes } = UseFilterFilmes({ filmes });
   const resetcomponent = useRouter();
   const [activeInputSearch, setActiveInputSearch] = useState<string>("off");
-  const [filmes, setFilmes] = useState<FilmesSmall[]>([]);
-  const [search, setSearch] = useState<string>("");
   const inputRef = useRef<HTMLInputElement>(null);
-  let filterFilmes: FilmesSmall[] = [];
 
   const handleClickBusca = useCallback(() => {
     setActiveInputSearch("on");
@@ -37,10 +37,6 @@ const Busca = ({ mobile }: props) => {
     setSearch(e.currentTarget.value.toLowerCase());
   };
 
-  if (search.length > 0 && filmes.length > 0) {
-    filterFilmes = filmes.filter((filmes: FilmesSmall) => filmes.title.toLowerCase().includes(search));
-  }
-
   return (
     <S.ConteinerBusca
       mobile={mobile}
@@ -52,14 +48,12 @@ const Busca = ({ mobile }: props) => {
     >
       <input ref={inputRef} onChange={ChangeInput} value={search} type="text" maxLength={35} />
       <HiOutlineSearch />
-      {search.length > 0 && (
-        <ul className="listFilmes">
-          {filterFilmes.length > 0 &&
-            filterFilmes.map((item: FilmesSmall) => (
-              <ItemSearch key={item.id} title={item.title} id={item.id} resetSearch={setSearch} />
-            ))}
-        </ul>
-      )}
+      <ul className="listFilmes">
+        {filterFilmes.length > 0 &&
+          filterFilmes.map((item: FilmesSmall) => (
+            <ItemSearch key={item.id} title={item.title} id={item.id} resetSearch={setSearch} />
+          ))}
+      </ul>
     </S.ConteinerBusca>
   );
 };

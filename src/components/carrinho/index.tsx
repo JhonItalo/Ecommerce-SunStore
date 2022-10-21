@@ -8,7 +8,7 @@ const Carrinho = () => {
   console.log("render carrinho");
   const { CountItemCart } = useContext(CartCountContext);
   return (
-    <Link href="/checkout">
+    <Link href="/cart">
       <a>
         <S.Carrinho>
           <AiOutlineShoppingCart />

@@ -1,16 +1,15 @@
 import React, { useContext } from "react";
-import { CartCountContext } from "../../context/CartCountContext";
+
 import UseAddCart from "../../hooks/UseAddCart";
 interface props {
   title: string;
   id: number;
+  poster_path: string;
 }
-const ButtonAddCart = ({ title, id }: props) => {
-  const { CountItemCart, setCountItemCart } = useContext(CartCountContext);
-  const { AdiconarCarrinho, setAdcionarCarrinho } = UseAddCart({ title, id });
+const ButtonAddCart = ({ title, id, poster_path }: props) => {
+  const { AdiconarCarrinho, setAdcionarCarrinho } = UseAddCart({ title, id, poster_path });
 
   const HandleClickAddCart = () => {
-    setCountItemCart(CountItemCart + 1);
     setAdcionarCarrinho(AdiconarCarrinho + 1);
   };
 

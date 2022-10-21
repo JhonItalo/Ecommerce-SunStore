@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "src/components/treandyProdut"  ],
+, "src/components/treandyProdut", "src/components/itemCart"  ],
   "exclude": [
     "node_modules"
   ]

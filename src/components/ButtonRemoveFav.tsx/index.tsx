@@ -20,7 +20,7 @@ const ButtonRemoveFav = ({ id, children }: props) => {
           localStorageArray.splice(i, 1);
           localStorage.setItem("favorito", JSON.stringify(localStorageArray));
           setDeleteItem(deleteItem + 1);
-          setReloadLocalStorage(ReloadLocalStorage + 1);
+          setReloadLocalStorage(!ReloadLocalStorage);
           setCountItemFav(CountItemFav - 1);
           return;
         }

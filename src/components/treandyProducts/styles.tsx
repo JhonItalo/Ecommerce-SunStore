@@ -47,8 +47,9 @@ export const ListProducts = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  overflow: scroll;
+  overflow: none;
   @media (max-width: 748px) {
+    overflow-x: scroll;
     flex-wrap: nowrap;
     gap: 2rem;
     .mediaQueryControlParentProduct {

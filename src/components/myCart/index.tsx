@@ -11,13 +11,16 @@ const MeusFavortios = () => {
   return (
     <S.Main>
       <h2>Carrinho</h2>
-      <ReloadContext Reload={reload} setReload={setReload}>
-        <S.ListCart>
-          {carrinho.map((item: ItemCartProps) => (
-            <ItemCart key={item.id} title={item.title} id={item.id} poster_path={item.poster_path} countItem={item.countItem} />
-          ))}
-        </S.ListCart>
-      </ReloadContext>
+      <S.Compra>
+        <ReloadContext Reload={reload} setReload={setReload}>
+          <S.ListCart>
+            {carrinho.map((item: ItemCartProps) => (
+              <ItemCart key={item.id} title={item.title} id={item.id} poster_path={item.poster_path} countItem={item.countItem} />
+            ))}
+          </S.ListCart>
+        </ReloadContext>
+        <button className="btnComprar">Comprar</button>
+      </S.Compra>
     </S.Main>
   );
 };

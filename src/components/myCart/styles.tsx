@@ -13,9 +13,29 @@ export const Main = styled.main`
     width: 100%;
   }
 `;
-export const ListCart = styled.ul`
+export const Compra = styled.div`
   width: 80%;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  // background-color: red;
+  align-items: end;
+  gap: 1rem;
+  .btnComprar {
+    margin-right: 2rem;
+    width: 15%;
+    height: 2rem;
+    background-color: ${({ theme }) => theme.colors.bege};
+    border: 1px solid rgba(30, 30, 30, 0.5);
+    color: white;
+    font-size: 1rem;
+    &:hover {
+      color: black;
+    }
+  }
+`;
+export const ListCart = styled.ul`
+  width: 100%;
   padding: 1rem 2rem;
   display: flex;
   flex-direction: column;

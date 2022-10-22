@@ -25,10 +25,7 @@ const Nav = ({ mobile }: props) => {
 
         <S.Li active={borderActive("/shop")}>
           <Link href="/shop">
-            <S.Navlink>
-              Shop
-              <MdKeyboardArrowDown />
-            </S.Navlink>
+            <S.Navlink>Shop</S.Navlink>
           </Link>
         </S.Li>
 

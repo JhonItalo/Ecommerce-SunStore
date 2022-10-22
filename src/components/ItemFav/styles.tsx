@@ -51,7 +51,7 @@ export const Buttons = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-  //background-color: green;
+  
 
   button {
     background-color: white;

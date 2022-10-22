@@ -19,7 +19,7 @@ export const ListCart = styled.ul`
   padding: 1rem 2rem;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
   background-color: white;
   @media (max-width: 748px) {
     width: 100%;

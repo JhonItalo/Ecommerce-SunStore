@@ -1,10 +1,63 @@
-import React from "react";
+import React, { useContext } from "react";
 import { ItemCartProps } from "../../types";
 import { URL_IMG } from "../../utils/Constants";
 import * as S from "./styles";
-import { CgMathMinus, CgMathPlus } from "react-icons/cg";
+import { ReloadLocalStorageContext } from "../../context/ReloadLocalStorageContext";
+import { CartCountContext } from "../../context/CartCountContext";
+//import { CgMathMinus, CgMathPlus } from "react-icons/cg";
 
 const ItemCart = ({ title, id, poster_path, countItem }: ItemCartProps) => {
+  //const {}
+  const { ReloadLocalStorage, setReloadLocalStorage } = useContext(ReloadLocalStorageContext);
+  const { CountItemCart, setCountItemCart } = useContext(CartCountContext);
+
+  const remove = () => {
+    console.log("entrou");
+    const n = localStorage.getItem("carrinho");
+    console.log("strring", n);
+    const h = JSON.parse(n!);
+    console.log("array", h);
+    for (let i = 0; i < h.length; i++) {
+      console.log("popsition verify");
+      if (h[i].id === id) {
+        console.log("entrou no if");
+        if (h[i].countItem >= 2) {
+          console.log("maior que 2");
+          h[i].countItem = h[i].countItem - 1;
+          localStorage.setItem("carrinho", JSON.stringify(h));
+          setReloadLocalStorage(!ReloadLocalStorage);
+          return;
+        } else if (h[i].countItem === 1) {
+          console.log("igual a um");
+          h.splice(i, 1);
+          setCountItemCart(CountItemCart - 1);
+          localStorage.setItem("carrinho", JSON.stringify(h));
+          setReloadLocalStorage(!ReloadLocalStorage);
+          return;
+        } else {
+          return;
+        }
+      }
+    }
+  };
+  const addItem = () => {
+    console.log("entrou");
+    const n = localStorage.getItem("carrinho");
+    console.log("strring", n);
+    const h = JSON.parse(n!);
+    console.log("array", h);
+    for (let i = 0; i < h.length; i++) {
+      console.log("popsition verify");
+      if (h[i].id === id) {
+        console.log("entrou no if");
+        h[i].countItem = h[i].countItem + 1;
+        localStorage.setItem("carrinho", JSON.stringify(h));
+        setReloadLocalStorage(!ReloadLocalStorage);
+        return;
+      }
+    }
+  };
+
   return (
     <div>
       <S.FilmePrice>
@@ -17,9 +70,9 @@ const ItemCart = ({ title, id, poster_path, countItem }: ItemCartProps) => {
               <p className="id">ID:{id}</p>
             </div>
             <div className="count">
-              <button>-</button>
+              <button onClick={remove}>-</button>
               <p>{countItem}</p>
-              <button>+</button>
+              <button onClick={addItem}>+</button>
             </div>
           </div>
         </S.ConteinerFilme>

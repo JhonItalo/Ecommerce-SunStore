@@ -5,7 +5,8 @@ export const FilmePrice = styled.div`
   padding: 0 1rem 1rem 0;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid rgba(80, 80, 80, 0.3);
+  //background-color: red;
 `;
 export const ConteinerFilme = styled.div`
   display: flex;

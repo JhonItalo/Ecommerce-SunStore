@@ -13,9 +13,14 @@ export const Content = styled.div`
   display: flex;
   background-color: white;
   overflow: hidden;
+
   // background-color: rgba(200, 200, 170, 0.3);
+  @media (max-width: 1920px) and (min-width: 1441px) {
+    height: 70vh;
+  }
   @media (max-width: 748px) {
     width: 100%;
+    flex-direction: column;
   }
 `;
 export const ConteinerShopCart = styled.div`
@@ -30,6 +35,11 @@ export const ConteinerShopCart = styled.div`
     align-items: center;
     font-weight: bold;
   }
+  @media (max-width: 748px) {
+    width: 100%;
+    flex-direction: column;
+    padding: 1rem;
+  }
 `;
 export const ListCart = styled.ul`
   width: 100%;
@@ -41,9 +51,9 @@ export const ListCart = styled.ul`
   gap: 1.5rem;
 
   border-top: 1px solid grey;
-  //background-color: brown;
+
   overflow-y: scroll;
   @media (max-width: 748px) {
-    width: 100%;
+    //width: 100%;
   }
 `;

@@ -1,59 +1,57 @@
 import styled from "styled-components";
 
-export const FilmePrice = styled.div`
+export const Item = styled.div`
   display: flex;
-  padding: 0 1rem 1rem 0;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgba(80, 80, 80, 0.3);
-  //background-color: red;
+  padding-right: 1rem;
 `;
 export const ConteinerFilme = styled.div`
   display: flex;
   gap: 1rem;
+  align-items: center;
+  height: 100px;
+
   img {
     width: 70px;
-    height: 100px;
+    height: 100%;
   }
-  .p {
-    height: inherit;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    color: grey;
-  }
-  .infos {
+`;
+export const Informacoes = styled.div`
+  height: 100%;
+  flex: none;
+  .text {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    .text {
-      .title {
-        font-size: 1.2rem;
-        letter-spacing: 4px;
-      }
-      .id {
-        color: grey;
-      }
+    .title {
+      font-size: 1.2rem;
+      letter-spacing: 4px;
     }
-
-    .count {
-      display: flex;
-      margin-top: 1rem;
-      p {
-        padding: 0 0.5rem;
-        font-size: 1.2rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-bottom: 1px solid black;
-        border-top: 1px solid black;
-      }
-      button {
-        padding: 0 0.4rem;
-        font-size: 1.2rem;
-      }
+    .id {
+      font-size: 0.9rem;
+      color: grey;
     }
+  }
+`;
+export const CountPrice = styled.div`
+  display: flex;
+  gap: 8rem;
+`;
+export const Count = styled.div`
+  display: flex;
+  margin-left: 2rem;
+  p {
+    padding: 0 0.5rem;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+  }
+  button {
+    padding: 0 0.4rem;
+    font-size: 1rem;
   }
 `;
 

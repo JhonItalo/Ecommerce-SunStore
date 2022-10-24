@@ -4,7 +4,7 @@ import { URL_IMG } from "../../utils/Constants";
 import * as S from "./styles";
 import { ReloadLocalStorageContext } from "../../context/ReloadLocalStorageContext";
 import { CartCountContext } from "../../context/CartCountContext";
-//import { CgMathMinus, CgMathPlus } from "react-icons/cg";
+
 
 const ItemCart = ({ title, id, poster_path, countItem }: ItemCartProps) => {
   //const {}
@@ -60,27 +60,29 @@ const ItemCart = ({ title, id, poster_path, countItem }: ItemCartProps) => {
 
   return (
     <div>
-      <S.FilmePrice>
+      <S.Item>
         <S.ConteinerFilme>
           <img src={`${URL_IMG}${poster_path}`} alt={title} />
           <p className="p">x</p>
-          <div className="infos">
+          <S.Informacoes>
             <div className="text">
               <p className="title">{title}</p>
               <p className="id">ID:{id}</p>
             </div>
-            <div className="count">
-              <button onClick={remove}>-</button>
-              <p>{countItem}</p>
-              <button onClick={addItem}>+</button>
-            </div>
-          </div>
+          </S.Informacoes>
         </S.ConteinerFilme>
-        <S.Price>
-          <p>Price</p>
-          <p>$</p>
-        </S.Price>
-      </S.FilmePrice>
+        <S.CountPrice>
+          <S.Count>
+            <button onClick={remove}>-</button>
+            <p>{countItem}</p>
+            <button onClick={addItem}>+</button>
+          </S.Count>
+          <S.Price>
+            <p>Price</p>
+            <p>$</p>
+          </S.Price>
+        </S.CountPrice>
+      </S.Item>
     </div>
   );
 };

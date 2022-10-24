@@ -67,10 +67,10 @@ export const ListProducts = styled.div`
       width: 5px;
     }
     ::-webkit-scrollbar-track {
-      border: 1px solid black;
+      border: 1px solid grey;
     }
     ::-webkit-scrollbar-thumb {
-      background-color: white;
+      background-color: rgba(0, 0, 0, 0.3);
     }
   }
 `;

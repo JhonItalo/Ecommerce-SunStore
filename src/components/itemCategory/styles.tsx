@@ -15,7 +15,8 @@ export const CategoryLi = styled.li<props>`
     display: ${({ active }) => (active ? "flex" : "none")};
   }
   @media (max-width: 748px) {
-    padding: 0 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 `;
 export const Topic = styled.div`

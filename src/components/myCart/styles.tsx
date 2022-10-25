@@ -35,19 +35,20 @@ export const ConteinerShopCart = styled.div`
     justify-content: space-between;
     align-items: center;
     font-weight: bold;
+    background-color: pink;
     .vazio {
       width: 100%;
       height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: red;
     }
   }
   @media (max-width: 748px) {
     width: 100%;
-    flex-direction: column;
-    padding: 1rem;
+    padding: 1rem 1rem 0rem;
+
+    background-color: blue;
   }
 `;
 export const ListCart = styled.ul`
@@ -64,6 +65,7 @@ export const ListCart = styled.ul`
 
   overflow-y: scroll;
   @media (max-width: 748px) {
-    //width: 100%;
+    background-color: red;
+    height: auto;
   }
 `;

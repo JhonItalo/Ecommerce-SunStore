@@ -9,6 +9,7 @@ export const Main = styled.main`
   @media (max-width: 748px) {
     width: 100%;
     padding: 0;
+    margin: 0;
   }
 `;
 export const Content = styled.div`
@@ -18,7 +19,7 @@ export const Content = styled.div`
   display: flex;
   background-color: white;
   overflow: hidden;
-  //background-color: blue;
+  background-color: blue;
   @media (max-width: 748px) {
     width: 100%;
     margin: 0;

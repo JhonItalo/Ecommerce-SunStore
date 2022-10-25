@@ -5,6 +5,10 @@ export const Sumary = styled.div`
   height: 100vh;
   padding: 2rem 2rem 0;
   background-color: ${({ theme }) => theme.colors.bege};
+  @media (max-width: 748px) {
+    width: 100%;
+    margin-top: 0;
+  }
 `;
 export const ConteinerBuy = styled.div`
   margin-top: 1rem;

@@ -4,7 +4,6 @@ import { FilmesShort } from "../../types";
 import ItemFav from "../ItemFav";
 import ReloadContext from "../../context/ReloadLocalStorageContext";
 import UseFavorito from "../../hooks/UseFavorito";
-import { Favoritos } from "../favoritos";
 
 const MeusFavortios = () => {
   const { favoritos, reload, setReload } = UseFavorito();

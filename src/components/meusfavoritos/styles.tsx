@@ -19,7 +19,15 @@ export const Content = styled.div`
   display: flex;
   background-color: white;
   overflow: hidden;
-  background-color: blue;
+  @media (max-width: 1920px) and (min-width: 1441px) {
+    height: 70vh;
+  }
+  @media (max-width: 1440px) and (min-width: 1367px) {
+    height: 80vh;
+  }
+  @media (max-width: 1280px) and (min-width: 1000px) {
+    height: 85vh;
+  }
   @media (max-width: 748px) {
     width: 100%;
     margin: 0;

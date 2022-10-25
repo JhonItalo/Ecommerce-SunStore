@@ -12,15 +12,21 @@ export const Content = styled.div`
   height: 90vh;
   margin: 0 auto;
   display: flex;
-  background-color: white;
   overflow: hidden;
-
+  background-color: white;
   // background-color: rgba(200, 200, 170, 0.3);
   @media (max-width: 1920px) and (min-width: 1441px) {
     height: 70vh;
   }
+  @media (max-width: 1440px) and (min-width: 1367px) {
+    height: 80vh;
+  }
+  @media (max-width: 1280px) and (min-width: 1000px) {
+    height: 80vh;
+  }
   @media (max-width: 748px) {
     width: 100%;
+    height: auto;
     flex-direction: column;
   }
 `;
@@ -35,19 +41,19 @@ export const ConteinerShopCart = styled.div`
     justify-content: space-between;
     align-items: center;
     font-weight: bold;
-    //background-color: pink;
     .vazio {
       width: 100%;
       height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
+      background-color: red;
     }
   }
   @media (max-width: 748px) {
     width: 100%;
-    padding: 1rem 1rem 0rem;
-    //background-color: blue;
+    flex-direction: column;
+    padding: 1rem;
   }
 `;
 export const ListCart = styled.ul`
@@ -64,7 +70,6 @@ export const ListCart = styled.ul`
 
   overflow-y: scroll;
   @media (max-width: 748px) {
-    // background-color: red;
-    height: 85%;
+    //width: 100%;
   }
 `;

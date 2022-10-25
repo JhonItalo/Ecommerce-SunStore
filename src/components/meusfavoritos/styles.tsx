@@ -8,6 +8,7 @@ export const Main = styled.main`
   padding-top: 1rem;
   @media (max-width: 748px) {
     width: 100%;
+    padding: 0;
   }
 `;
 export const Content = styled.div`
@@ -17,6 +18,11 @@ export const Content = styled.div`
   display: flex;
   background-color: white;
   overflow: hidden;
+  background-color: blue;
+  @media (max-width: 748px) {
+    width: 100%;
+    margin: 0;
+  }
 `;
 
 export const ConteinerFav = styled.div`
@@ -25,6 +31,7 @@ export const ConteinerFav = styled.div`
   display: flex;
   flex-direction: column;
   padding: 2rem 2rem 0;
+  background-color: yellow;
 
   .topic {
     display: flex;
@@ -40,6 +47,10 @@ export const ConteinerFav = styled.div`
       align-items: center;
     }
   }
+  @media (max-width: 748px) {
+    width: 100%;
+    margin: 0;
+  }
 `;
 
 export const ListFav = styled.ul`
@@ -51,7 +62,9 @@ export const ListFav = styled.ul`
   gap: 1rem;
   border-bottom: 1px solid grey;
   border-top: 1px solid grey;
+  background-color: orange;
   @media (max-width: 748px) {
     width: 100%;
+    gap: 3rem;
   }
 `;

@@ -15,7 +15,7 @@ const MeusFavortios = () => {
           <S.ConteinerFav>
             <div className="topic">
               <h2>Meus favoritos</h2>
-              <p>{Favoritos.length} Items</p>
+              <p>{favoritos.length} Items</p>
             </div>
             <S.ListFav>
               {favoritos.length < 1 ? (

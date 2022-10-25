@@ -1,18 +1,17 @@
 import styled from "styled-components";
 
 export const Item = styled.li`
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
-  border: 1px solid black;
-  background-color: white;
-  padding: 1rem;
+  //background-color: red;
+  padding-right: 1rem;
+
   @media (max-width: 748px) {
     width: 100%;
-    background-color: blue;
     flex-direction: column;
   }
 `;
@@ -51,7 +50,6 @@ export const Buttons = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-  
 
   button {
     background-color: white;

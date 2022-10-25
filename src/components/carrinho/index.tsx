@@ -12,7 +12,7 @@ const Carrinho = () => {
       <a>
         <S.Carrinho>
           <AiOutlineShoppingCart />
-          <span>{CountItemCart > 0 ? CountItemCart : ""}</span>
+          {CountItemCart > 0 ? <span>{CountItemCart}</span> : ""}
         </S.Carrinho>
       </a>
     </Link>

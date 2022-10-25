@@ -21,15 +21,19 @@ const MeusFavortios = () => {
           </div>
           <ReloadContext Reload={reload} setReload={setReload}>
             <S.ListCart>
-              {carrinho.map((item: ItemCartProps) => (
-                <ItemCart
-                  key={item.id}
-                  title={item.title}
-                  id={item.id}
-                  poster_path={item.poster_path}
-                  countItem={item.countItem}
-                />
-              ))}
+              {carrinho.length < 1 ? (
+                <p>Carrinho vazio</p>
+              ) : (
+                carrinho.map((item: ItemCartProps) => (
+                  <ItemCart
+                    key={item.id}
+                    title={item.title}
+                    id={item.id}
+                    poster_path={item.poster_path}
+                    countItem={item.countItem}
+                  />
+                ))
+              )}
             </S.ListCart>
           </ReloadContext>
         </S.ConteinerShopCart>

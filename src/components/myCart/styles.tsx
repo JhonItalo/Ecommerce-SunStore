@@ -5,6 +5,7 @@ export const Main = styled.main`
   background-color: grey;
   margin-bottom: 3rem;
   padding-bottom: 3rem;
+  padding-top: 1rem;
 `;
 export const Content = styled.div`
   width: 80%;
@@ -34,6 +35,14 @@ export const ConteinerShopCart = styled.div`
     justify-content: space-between;
     align-items: center;
     font-weight: bold;
+    .vazio {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: red;
+    }
   }
   @media (max-width: 748px) {
     width: 100%;
@@ -51,6 +60,7 @@ export const ListCart = styled.ul`
   gap: 1.5rem;
 
   border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
 
   overflow-y: scroll;
   @media (max-width: 748px) {

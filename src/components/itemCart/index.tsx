@@ -5,7 +5,6 @@ import * as S from "./styles";
 import { ReloadLocalStorageContext } from "../../context/ReloadLocalStorageContext";
 import { CartCountContext } from "../../context/CartCountContext";
 
-
 const ItemCart = ({ title, id, poster_path, countItem }: ItemCartProps) => {
   //const {}
   const { ReloadLocalStorage, setReloadLocalStorage } = useContext(ReloadLocalStorageContext);
@@ -78,8 +77,7 @@ const ItemCart = ({ title, id, poster_path, countItem }: ItemCartProps) => {
             <button onClick={addItem}>+</button>
           </S.Count>
           <S.Price>
-            <p>Price</p>
-            <p>$</p>
+            <p>$$$</p>
           </S.Price>
         </S.CountPrice>
       </S.Item>

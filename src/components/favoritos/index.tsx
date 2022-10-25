@@ -12,7 +12,7 @@ export const Favoritos = () => {
       <a>
         <S.Favoritos>
           <AiOutlineHeart />
-          <span>{CountItemFav}</span>
+          {CountItemFav > 0 ? <span>{CountItemFav}</span> : ""}
         </S.Favoritos>
       </a>
     </Link>

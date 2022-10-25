@@ -31,7 +31,7 @@ export const ConteinerFav = styled.div`
   display: flex;
   flex-direction: column;
   padding: 2rem 2rem 0;
-  background-color: yellow;
+  //background-color: yellow;
 
   .topic {
     display: flex;
@@ -62,7 +62,7 @@ export const ListFav = styled.ul`
   gap: 1rem;
   border-bottom: 1px solid grey;
   border-top: 1px solid grey;
-  background-color: orange;
+  //background-color: orange;
   @media (max-width: 748px) {
     width: 100%;
     gap: 3rem;

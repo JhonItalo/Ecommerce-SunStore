@@ -18,7 +18,7 @@ export const Content = styled.div`
   display: flex;
   background-color: white;
   overflow: hidden;
-  background-color: blue;
+  //background-color: blue;
   @media (max-width: 748px) {
     width: 100%;
     margin: 0;
@@ -62,9 +62,10 @@ export const ListFav = styled.ul`
   gap: 1rem;
   border-bottom: 1px solid grey;
   border-top: 1px solid grey;
-  //background-color: orange;
+  // background-color: orange;
   @media (max-width: 748px) {
     width: 100%;
     gap: 3rem;
+    padding: 2rem 0;
   }
 `;

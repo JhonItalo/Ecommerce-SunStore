@@ -9,6 +9,7 @@ export const conteinerProduto = styled.div`
   gap: 2rem;
   position: relative;
   background-color: rgba(200, 200, 170, 0.3);
+  //background-color: blue;
 
   @media (max-width: 1920px) and (min-width: 1441px) {
     height: 800px;
@@ -20,6 +21,12 @@ export const conteinerProduto = styled.div`
   @media (max-width: 1280px) and (min-width: 1000px) {
     height: 550px;
   }
+  @media (max-width: 748px) {
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 export const ConteinerImage = styled.div`
   position: relative;
@@ -27,7 +34,11 @@ export const ConteinerImage = styled.div`
   width: 30%;
   height: 100%;
   overflow: none;
-  //border: 2px solid red;
+
+  @media (max-width: 748px) {
+    width: 80%;
+    height: 400px;
+  }
 `;
 
 export const ConteinerInfos = styled.div`
@@ -36,8 +47,13 @@ export const ConteinerInfos = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
+  // background-color: red;
   //border: 2px solid red;
   //background-color: white;
+  @media (max-width: 748px) {
+    width: 100%;
+    height: 400px;
+  }
 `;
 
 export const titles = styled.div`
@@ -51,6 +67,10 @@ export const titles = styled.div`
   .subtitle {
     font-size: 1.5rem;
     font-weight: bold;
+  }
+  @media (max-width: 748px) {
+    width: 100%;
+    text-align: center;
   }
 `;
 export const Descricao = styled.div`
@@ -118,5 +138,8 @@ export const Nota = styled.div`
   svg {
     font-size: 2rem;
     color: yellow;
+  }
+  @media (max-width: 748px) {
+    display: none;
   }
 `;

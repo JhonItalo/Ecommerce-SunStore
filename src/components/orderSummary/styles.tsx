@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Sumary = styled.div`
   width: 30%;
-  height: 100vh;
   padding: 2rem 2rem 0;
   background-color: ${({ theme }) => theme.colors.bege};
   @media (max-width: 748px) {

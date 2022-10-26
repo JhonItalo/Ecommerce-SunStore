@@ -28,19 +28,18 @@ const ProdutoISR = ({ produto }: props) => {
         </S.titles>
 
         <S.Descricao>
-          <span>Descrição: </span>
           <p>{produto.overview}</p>
         </S.Descricao>
 
         <S.genero>
           <span className="genre">Genêro:</span>
           {produto.genres.map((item: any) => (
-            <p key={item.id}>{`- ${item.name} -`}</p>
+            <p key={item.id}>{`${item.name} - `}</p>
           ))}
         </S.genero>
 
         <S.Producao>
-          <span>Produção -</span>
+          <span>Produção:</span>
           {produto.production_companies.map((item: any) => (
             <p key={item.id}>{item.name}</p>
           ))}

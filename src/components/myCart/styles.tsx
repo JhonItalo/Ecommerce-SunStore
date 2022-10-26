@@ -6,6 +6,11 @@ export const Main = styled.main`
   margin-bottom: 3rem;
   padding-bottom: 3rem;
   padding-top: 1rem;
+  @media (max-width: 748px) {
+    padding: 0;
+    margin: 0 0 1rem;
+    flex-direction: column;
+  }
 `;
 export const Content = styled.div`
   width: 80%;
@@ -47,11 +52,11 @@ export const ConteinerShopCart = styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: red;
     }
   }
   @media (max-width: 748px) {
     width: 100%;
+    max-height: 70vh;
     flex-direction: column;
     padding: 1rem;
   }

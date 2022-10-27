@@ -1,37 +1,25 @@
 import React, { useContext } from "react";
-import { ItemCartProps } from "../../types";
+import { LocalStorageProps } from "../../types";
 import { URL_IMG } from "../../utils/Constants";
 import * as S from "./styles";
-import { ReloadLocalStorageContext } from "../../context/ReloadLocalStorageContext";
-import { CartCountContext } from "../../context/CartCountContext";
+import { CartContext } from "../../context/CartContext";
 
-const ItemCart = ({ title, id, poster_path, countItem }: ItemCartProps) => {
-  //const {}
-  const { ReloadLocalStorage, setReloadLocalStorage } = useContext(ReloadLocalStorageContext);
-  const { CountItemCart, setCountItemCart } = useContext(CartCountContext);
+const ItemCart = ({ title, id, poster_path, countItem }: LocalStorageProps) => {
+  const { storage, setAttLocalStorage, attLocalStorage } = useContext(CartContext);
 
   const remove = () => {
-    console.log("entrou");
-    const n = localStorage.getItem("carrinho");
-    console.log("strring", n);
-    const h = JSON.parse(n!);
-    console.log("array", h);
-    for (let i = 0; i < h.length; i++) {
+    for (let i = 0; i < storage.length; i++) {
       console.log("popsition verify");
-      if (h[i].id === id) {
-        console.log("entrou no if");
-        if (h[i].countItem >= 2) {
-          console.log("maior que 2");
-          h[i].countItem = h[i].countItem - 1;
-          localStorage.setItem("carrinho", JSON.stringify(h));
-          setReloadLocalStorage(!ReloadLocalStorage);
+      if (storage[i].id === id) {
+        if (storage[i].countItem >= 2) {
+          storage[i].countItem = storage[i].countItem - 1;
+          localStorage.setItem("carrinho", JSON.stringify(storage));
+          setAttLocalStorage(!attLocalStorage);
           return;
-        } else if (h[i].countItem === 1) {
-          console.log("igual a um");
-          h.splice(i, 1);
-          setCountItemCart(CountItemCart - 1);
-          localStorage.setItem("carrinho", JSON.stringify(h));
-          setReloadLocalStorage(!ReloadLocalStorage);
+        } else if (storage[i].countItem === 1) {
+          storage.splice(i, 1);
+          localStorage.setItem("carrinho", JSON.stringify(storage));
+          setAttLocalStorage(!attLocalStorage);
           return;
         } else {
           return;
@@ -40,18 +28,12 @@ const ItemCart = ({ title, id, poster_path, countItem }: ItemCartProps) => {
     }
   };
   const addItem = () => {
-    console.log("entrou");
-    const n = localStorage.getItem("carrinho");
-    console.log("strring", n);
-    const h = JSON.parse(n!);
-    console.log("array", h);
-    for (let i = 0; i < h.length; i++) {
+    for (let i = 0; i < storage.length; i++) {
       console.log("popsition verify");
-      if (h[i].id === id) {
-        console.log("entrou no if");
-        h[i].countItem = h[i].countItem + 1;
-        localStorage.setItem("carrinho", JSON.stringify(h));
-        setReloadLocalStorage(!ReloadLocalStorage);
+      if (storage[i].id === id) {
+        storage[i].countItem = storage[i].countItem + 1;
+        localStorage.setItem("carrinho", JSON.stringify(storage));
+        setAttLocalStorage(!attLocalStorage);
         return;
       }
     }

@@ -5,7 +5,7 @@ export const Item = styled.div`
   justify-content: space-between;
   align-items: center;
   padding-right: 1rem;
-  //background-color: green;
+
   @media (max-width: 748px) {
     align-items: initial;
     padding: 0;
@@ -16,7 +16,6 @@ export const ConteinerFilme = styled.div`
   gap: 1rem;
   align-items: center;
   height: 100px;
-  //background-color: blue;
 
   img {
     width: 70px;
@@ -74,7 +73,6 @@ export const CountPrice = styled.div`
     padding-right: 1rem;
     align-items: center;
     gap: initial;
-    // background-color: yellow;
   }
 `;
 export const Count = styled.div`

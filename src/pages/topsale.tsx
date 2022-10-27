@@ -1,7 +1,8 @@
 import React from "react";
+import GenericPage from "../components/genericPage";
 
 const topsale = () => {
-  return <div>topsale</div>;
+  return <GenericPage/>
 };
 
 export default topsale;

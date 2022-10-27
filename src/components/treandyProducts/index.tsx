@@ -27,7 +27,6 @@ const opcaoAtual = (array: FilmesShort[]) => {
 };
 
 const TreandyProducts = ({ newP, feature, best }: props) => {
-  console.log("trendly render");
   const [category, setCategory] = useState<string>("new");
   return (
     <>

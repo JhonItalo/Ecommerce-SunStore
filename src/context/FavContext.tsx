@@ -1,25 +1,27 @@
 import { createContext, useEffect, useState } from "react";
 import React from "react";
+import { FilmesShort } from "../types";
 
 interface context {
-  CountItemFav: number;
-  setCountItemFav: React.Dispatch<React.SetStateAction<number>>;
+  storage: FilmesShort[];
+  attLocalStorage: boolean;
+  setAttLocalStorage: React.Dispatch<React.SetStateAction<boolean>>;
 }
 const defaultValue = {
-  CountItemFav: 0,
-  setCountItemFav: () => {
+  storage: [],
+  attLocalStorage: false,
+  setAttLocalStorage: () => {
     //nothing
   },
 };
-export const CountFavoritoContext = createContext<context>(defaultValue);
+export const FavoritoContext = createContext<context>(defaultValue);
 
 interface props {
   children: React.ReactNode;
 }
 const FavContext = ({ children }: props) => {
-  console.log("contexto renderizou fav");
-
-  const [CountItemFav, setCountItemFav] = useState<number>(0);
+  const [attLocalStorage, setAttLocalStorage] = useState<boolean>(false);
+  const [storage, setStorage] = useState<FilmesShort[]>([]);
 
   useEffect(() => {
     const localStorageString = localStorage.getItem("favorito");
@@ -27,13 +29,11 @@ const FavContext = ({ children }: props) => {
       localStorage.setItem("favorito", "[]");
     } else {
       const localStorageArray = JSON.parse(localStorageString!);
-      setCountItemFav(localStorageArray.length);
+      setStorage(localStorageArray);
     }
-  }, [CountItemFav]);
+  }, [attLocalStorage]);
 
-  console.log(CountItemFav, "contexto");
-
-  return <CountFavoritoContext.Provider value={{ CountItemFav, setCountItemFav }}>{children}</CountFavoritoContext.Provider>;
+  return <FavoritoContext.Provider value={{ attLocalStorage, setAttLocalStorage, storage }}>{children}</FavoritoContext.Provider>;
 };
 
 export default FavContext;

@@ -1,8 +1,7 @@
 import * as S from "./styles";
-
 import { MdKeyboardArrowDown } from "react-icons/md";
+
 const AccountPreferenc = () => {
-  console.log("render accountPrefer");
   return (
     <S.AccPref>
       <S.Icons>

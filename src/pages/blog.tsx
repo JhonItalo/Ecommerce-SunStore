@@ -1,11 +1,8 @@
-import React from 'react'
+import React from "react";
+import GenericPage from "../components/genericPage";
 
 const blog = () => {
-  return (
-    <main>
-      
-    </main>
-  )
-}
+  return <GenericPage />;
+};
 
-export default blog
+export default blog;

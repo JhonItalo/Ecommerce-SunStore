@@ -1,17 +1,12 @@
 import { useEffect, useState, useContext } from "react";
-import { CountFavoritoContext } from "../context/FavContext";
+import { FavoritoContext } from "../context/FavContext";
+import { FilmesShort } from "../types";
 
-interface props {
-  title: string;
-  id: number;
-  poster_path: string;
-}
-
-const UseAddFav = ({ title, id, poster_path }: props) => {
-  const { CountItemFav, setCountItemFav } = useContext(CountFavoritoContext);
+const UseAddFav = ({ title, id, poster_path }: FilmesShort) => {
+  const { attLocalStorage, setAttLocalStorage, storage } = useContext(FavoritoContext);
   const [AdiconarFavorito, setAdcionarFavorito] = useState<number>(0);
 
-  const removefav = (array: props[], id: number): boolean => {
+  const removeItem = (array: FilmesShort[], id: number): boolean => {
     for (let i = 0; i < array.length; i++) {
       if (array[i].id === id) {
         array.splice(i, 1);
@@ -23,19 +18,16 @@ const UseAddFav = ({ title, id, poster_path }: props) => {
   };
 
   useEffect(() => {
+    const localStorageCopy = storage;
     if (AdiconarFavorito > 0) {
-      const localStorageString = localStorage.getItem("favorito");
-      const responseArray = JSON.parse(localStorageString!);
-      if (removefav(responseArray, id)) {
-        console.log("entrou no remove item");
-        localStorage.setItem("favorito", JSON.stringify(responseArray));
-        setCountItemFav(CountItemFav - 1);
+      if (removeItem(localStorageCopy, id)) {
+        localStorage.setItem("favorito", JSON.stringify(localStorageCopy));
+        setAttLocalStorage(!attLocalStorage);
         return;
       } else {
-        console.log("entrou no add item item");
-        responseArray.push({ title: title, id: id, poster_path: poster_path });
-        localStorage.setItem("favorito", JSON.stringify(responseArray));
-        setCountItemFav(CountItemFav + 1);
+        localStorageCopy.push({ title: title, id: id, poster_path: poster_path });
+        localStorage.setItem("favorito", JSON.stringify(localStorageCopy));
+        setAttLocalStorage(!attLocalStorage);
       }
     }
   }, [AdiconarFavorito, title, id, poster_path]);

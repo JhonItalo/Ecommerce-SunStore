@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext } from "react";
-import { CartCountContext } from "../context/CartCountContext";
+import { CartContext } from "../context/CartContext";
 
 interface props {
   title: string;
@@ -9,25 +9,25 @@ interface props {
 
 const UseAddCart = ({ title, id, poster_path }: props) => {
   const [AdiconarCarrinho, setAdcionarCarrinho] = useState<number>(0);
-  const { CountItemCart, setCountItemCart } = useContext(CartCountContext);
+  const { storage, setAttLocalStorage, attLocalStorage } = useContext(CartContext);
 
   useEffect(() => {
     if (AdiconarCarrinho > 0) {
-      const localStorageString = localStorage.getItem("carrinho");
-      if (typeof localStorageString != typeof "string") {
+      if (storage === []) {
         localStorage.setItem("carrinho", JSON.stringify([{ title: title, id: id, poster_path: poster_path, countItem: 1 }]));
+        setAttLocalStorage(!attLocalStorage);
       } else {
-        const localStorageArray = JSON.parse(localStorageString!);
-        for (let i = 0; i < localStorageArray.length; i++) {
-          if (localStorageArray[i].id === id) {
-            localStorageArray[i].countItem = localStorageArray[i].countItem + 1;
-            localStorage.setItem("carrinho", JSON.stringify(localStorageArray));
+        for (let i = 0; i < storage.length; i++) {
+          if (storage[i].id === id) {
+            storage[i].countItem = storage[i].countItem + 1;
+            localStorage.setItem("carrinho", JSON.stringify(storage));
+            setAttLocalStorage(!attLocalStorage);
             return;
           }
         }
-        setCountItemCart(CountItemCart + 1);
-        localStorageArray.push({ title: title, id: id, poster_path: poster_path, countItem: 1 });
-        localStorage.setItem("carrinho", JSON.stringify(localStorageArray));
+        storage.push({ title: title, id: id, poster_path: poster_path, countItem: 1 });
+        localStorage.setItem("carrinho", JSON.stringify(storage));
+        setAttLocalStorage(!attLocalStorage);
         return;
       }
     }

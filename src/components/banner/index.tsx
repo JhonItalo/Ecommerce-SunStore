@@ -1,7 +1,6 @@
-import * as S from "./styles";
 import Link from "next/link";
+import * as S from "./styles";
 const Banner = () => {
-  console.log("render banner");
   return (
     <S.ConteinerBanner>
       <S.Text>

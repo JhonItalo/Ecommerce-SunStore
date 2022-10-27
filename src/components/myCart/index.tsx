@@ -1,41 +1,35 @@
 import React, { useContext } from "react";
-import UseCarrinho from "../../hooks/UseCarrinho";
 import ItemCart from "../itemCart";
-import { ItemCartProps } from "../../types";
+import { LocalStorageProps } from "../../types";
 import * as S from "./styles";
-import ReloadContext from "../../context/ReloadLocalStorageContext";
-import { CartCountContext } from "../../context/CartCountContext";
+import { CartContext } from "../../context/CartContext";
 import OrderSummary from "../orderSummary";
 
 const MeusFavortios = () => {
-  const { carrinho, reload, setReload } = UseCarrinho();
-  const { CountItemCart } = useContext(CartCountContext);
-  console.log(carrinho);
+  const { storage } = useContext(CartContext);
   return (
     <S.Main>
       <S.Content>
         <S.ConteinerShopCart>
           <div className="topic">
             <h2>Shopping Cart</h2>
-            <p>{CountItemCart} Items</p>
+            <p>{storage.length} Items</p>
           </div>
-          <ReloadContext Reload={reload} setReload={setReload}>
-            <S.ListCart>
-              {carrinho.length < 1 ? (
-                <p>Carrinho vazio</p>
-              ) : (
-                carrinho.map((item: ItemCartProps) => (
-                  <ItemCart
-                    key={item.id}
-                    title={item.title}
-                    id={item.id}
-                    poster_path={item.poster_path}
-                    countItem={item.countItem}
-                  />
-                ))
-              )}
-            </S.ListCart>
-          </ReloadContext>
+          <S.ListCart>
+            {storage.length < 1 ? (
+              <p>Carrinho vazio</p>
+            ) : (
+              storage.map((item: LocalStorageProps) => (
+                <ItemCart
+                  key={item.id}
+                  title={item.title}
+                  id={item.id}
+                  poster_path={item.poster_path}
+                  countItem={item.countItem}
+                />
+              ))
+            )}
+          </S.ListCart>
         </S.ConteinerShopCart>
         <OrderSummary />
       </S.Content>

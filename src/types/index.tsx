@@ -15,7 +15,7 @@ export interface FilmesMedian {
   vote_average: number;
 }
 
-export interface ItemCartProps {
+export interface LocalStorageProps {
   title: string;
   id: number;
   poster_path: string;

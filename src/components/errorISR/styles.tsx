@@ -7,7 +7,7 @@ export const conteinerError = styled.div`
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  //background-color: red;
+
   p {
     font-size: 2rem;
   }

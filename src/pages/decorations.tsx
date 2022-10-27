@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import GenericPage from "../components/genericPage";
 
 const decorations = () => {
-  return (
-    <div>decorations</div>
-  )
-}
+  return <GenericPage />;
+};
 
-export default decorations
+export default decorations;

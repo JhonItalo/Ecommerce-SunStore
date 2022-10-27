@@ -8,7 +8,7 @@ import {
 import Link from "next/link";
 
 const Footer = () => {
-  console.log("render footer");
+ 
   return (
     <S.Footer>
       <p>

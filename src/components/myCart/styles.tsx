@@ -15,7 +15,7 @@ export const Main = styled.main`
 export const Content = styled.div`
   width: 80%;
   height: 90vh;
-  margin: 0 auto;
+  margin: 0 auto 4rem;
   display: flex;
   overflow: hidden;
   background-color: white;

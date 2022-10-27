@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import GenericPage from "../components/genericPage";
 
 const brands = () => {
-  return (
-    <div>brands</div>
-  )
-}
+  return <GenericPage />;
+};
 
-export default brands
+export default brands;

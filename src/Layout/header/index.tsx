@@ -5,7 +5,7 @@ import Logo from "../../components/logo";
 import MenuMobile from "../../components/menuMobile";
 
 const Header = () => {
-  console.log("header render");
+
   return (
     <S.Header>
       <S.Content>

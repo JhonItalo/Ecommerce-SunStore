@@ -11,7 +11,6 @@ interface props {
 }
 
 const ItemFav = ({ filme }: props) => {
-  console.log(filme);
   return (
     <S.Item>
       <S.conteinerInfoFilme>

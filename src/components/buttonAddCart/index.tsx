@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 
 import UseAddCart from "../../hooks/UseAddCart";
 interface props {

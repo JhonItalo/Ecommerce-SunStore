@@ -16,8 +16,6 @@ const defaultValueContext = {
 };
 export const ProdutosFilterContex = createContext<propsContext>(defaultValueContext);
 
-console.log("context produto");
-
 interface props {
   categorys: {
     chair: FilmesMedian[];

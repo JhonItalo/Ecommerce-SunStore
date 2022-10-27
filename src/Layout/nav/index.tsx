@@ -7,7 +7,6 @@ interface props {
 }
 
 const Nav = ({ mobile }: props) => {
-  console.log("nav render");
   const rotaAtual = useRouter();
 
   const borderActive = (opc: string) => {

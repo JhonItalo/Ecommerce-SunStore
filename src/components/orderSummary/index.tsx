@@ -1,16 +1,16 @@
 import React, { useContext } from "react";
 import * as S from "./styles";
-import { CartCountContext } from "../../context/CartCountContext";
+import { CartContext } from "../../context/CartContext";
 
 const OrderSummary = () => {
-  const { CountItemCart } = useContext(CartCountContext);
+  const { storage } = useContext(CartContext);
 
   return (
     <S.Sumary>
       <h2>Order Summary</h2>
       <S.ConteinerBuy>
         <S.InitialPrice>
-          <p>{CountItemCart} Items </p>
+          <p>{storage.length} Items </p>
           <p>$$$</p>
         </S.InitialPrice>
         <S.Form>

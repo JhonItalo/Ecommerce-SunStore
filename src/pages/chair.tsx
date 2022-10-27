@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import GenericPage from "../components/genericPage";
 
 const chair = () => {
-  return (
-    <div>chair</div>
-  )
-}
+  return <GenericPage />;
+};
 
-export default chair
+export default chair;

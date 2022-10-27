@@ -14,15 +14,11 @@ interface props {
 }
 
 export default function shop({ chair, bed, workDesk, table, sofaSet }: props) {
-  console.log(chair);
   return (
     <>
       <Head>
-        <title>SunStore - Home</title>
-        <meta
-          name="keywords"
-          content="ecommerce, Sunstore, Chair, Bed, Table, Work Desk, Sofa-set"
-        />
+        <title>SunStore - Shop</title>
+        <meta name="keywords" content="ecommerce, Sunstore, Chair, Bed, Table, Work Desk, Sofa-set" />
       </Head>
       <main>
         <FilmesContext categorys={{ chair, bed, workDesk, table, sofaSet }}>

@@ -3,7 +3,6 @@ import TitleSection from "../titleSection";
 import * as S from "./styles";
 
 const TopCategory = () => {
-  console.log("top category");
   return (
     <S.Topcategory>
       <TitleSection title="Best Itens" subtitle="Top category" />

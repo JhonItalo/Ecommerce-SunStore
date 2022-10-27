@@ -16,7 +16,6 @@ interface props {
 }
 
 const Products = ({ title, poster_path, id, width, height, type }: props) => {
-  console.log("render produto");
   return (
     <S.Itens width={width} height={height} type={type} className="mediaQueryControlParentProduct">
       <div className="ConteinerImage">

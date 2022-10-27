@@ -10,7 +10,6 @@ interface props {
   mobile?: boolean;
 }
 const Busca = ({ mobile }: props) => {
-  console.log("busca render");
   const [filmes, setFilmes] = useState<FilmesSmall[]>([]);
   const { search, setSearch, filterFilmes } = UseFilterFilmes({ filmes });
   const resetcomponent = useRouter();
@@ -40,11 +39,11 @@ const Busca = ({ mobile }: props) => {
   return (
     <S.ConteinerBusca
       mobile={mobile}
-      className="ConteinerBusca"
-      onScroll={(e) => e.stopPropagation()}
-      onClick={handleClickBusca}
       active={activeInputSearch === "on"}
+      className="ConteinerBusca"
+      onClick={handleClickBusca}
       onDoubleClick={() => setActiveInputSearch("off")}
+      onScroll={(e) => e.stopPropagation()}
     >
       <input ref={inputRef} onChange={ChangeInput} value={search} type="text" maxLength={35} />
       <HiOutlineSearch />

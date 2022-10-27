@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import GenericPage from "../components/genericPage";
 
 const more = () => {
-  return (
-    <div>more</div>
-  )
-}
+  return <GenericPage />;
+};
 
-export default more
+export default more;

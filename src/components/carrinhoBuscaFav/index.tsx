@@ -5,7 +5,6 @@ import { Favoritos } from "../favoritos";
 import Carrinho from "../carrinho";
 
 const CarrinhoBuscaFav = () => {
-  console.log("render carrinhoBuscafav")
   return (
     <S.icons>
       <Busca />

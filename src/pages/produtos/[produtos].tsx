@@ -11,8 +11,6 @@ interface props {
   error: boolean;
 }
 const produtos = ({ produto, error }: props) => {
-  console.log(produto, error);
-
   return (
     <main>
       {error && <ErrorISR />}
@@ -24,9 +22,7 @@ const produtos = ({ produto, error }: props) => {
 export default produtos;
 
 export const buscaId = async (id: string) => {
-  const req = await fetch(
-    `https://api.themoviedb.org/3/movie/${id}?api_key=617375c16cb7cbacc59f9c2b6102e4e4&language=pt-BR`
-  );
+  const req = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=617375c16cb7cbacc59f9c2b6102e4e4&language=pt-BR`);
   const response = await req.json();
   return response;
 };

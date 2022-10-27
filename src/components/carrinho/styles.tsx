@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Carrinho = styled.div`
   position: relative;
-
   span {
     display: flex;
     align-items: center;
